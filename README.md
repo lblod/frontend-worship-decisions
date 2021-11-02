@@ -1,3 +1,3 @@
 # frontend-public-decisions
 
-Frontend of the Toezich ABB application
+Frontend of the Public decisions application

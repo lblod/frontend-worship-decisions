@@ -24,18 +24,19 @@ module.exports = function (environment) {
     moment: {
       allowEmpty: true
     },
-    torii: {
-      disableRedirectInitializer: true,
-      providers: {
-        'acmidm-oauth2': {
-          apiKey: '68799bf1-f9eb-4d23-be16-c07c31ae342c',
-          baseUrl: 'https://authenticatie-ti.vlaanderen.be/op/v1/auth',
-          scope: 'openid vo profile ABBDatabankToezicht',
-          redirectUri: 'https://besluiten.abb.lblod.info/authorization/callback',
-          logoutUrl: 'https://authenticatie-ti.vlaanderen.be/op/v1/logout'
-        }
-      }
-    },
+    //TODO: activate once ACM/IDM is ready
+    // torii: {
+    //   disableRedirectInitializer: true,
+    //   providers: {
+    //     'acmidm-oauth2': {
+    //       apiKey: '68799bf1-f9eb-4d23-be16-c07c31ae342c',
+    //       baseUrl: 'https://authenticatie-ti.vlaanderen.be/op/v1/auth',
+    //       scope: 'openid vo profile ABBDatabankToezicht',
+    //       redirectUri: 'https://besluiten.abb.lblod.info/authorization/callback',
+    //       logoutUrl: 'https://authenticatie-ti.vlaanderen.be/op/v1/logout'
+    //     }
+    //   }
+    // },
     browserUpdate: {
       vs: {i:11,f:-3,o:-3,s:-3,c:-3},
       style: 'corner',
@@ -65,10 +66,11 @@ module.exports = function (environment) {
   }
 
   if (process.env.DEPLOY_ENV === 'production') {
-    ENV['torii']['providers']['acmidm-oauth2']['apiKey'] = '581c5176-1a08-48d6-a9ef-e6fb95fe6010';
-    ENV['torii']['providers']['acmidm-oauth2']['baseUrl'] = 'https://authenticatie.vlaanderen.be/op/v1/auth';
-    ENV['torii']['providers']['acmidm-oauth2']['redirectUri'] = 'https://besluiten.abb.vlaanderen.be/authorization/callback';
-    ENV['torii']['providers']['acmidm-oauth2']['logoutUrl'] = 'https://authenticatie.vlaanderen.be/op/v1/logout';
+    //TODO: activate once ACM/IDM is ready
+    // ENV['torii']['providers']['acmidm-oauth2']['apiKey'] = '581c5176-1a08-48d6-a9ef-e6fb95fe6010';
+    // ENV['torii']['providers']['acmidm-oauth2']['baseUrl'] = 'https://authenticatie.vlaanderen.be/op/v1/auth';
+    // ENV['torii']['providers']['acmidm-oauth2']['redirectUri'] = 'https://besluiten.abb.vlaanderen.be/authorization/callback';
+    // ENV['torii']['providers']['acmidm-oauth2']['logoutUrl'] = 'https://authenticatie.vlaanderen.be/op/v1/logout';
   }
 
   return ENV;
