@@ -1,0 +1,55 @@
+<div class="au-o-grid__item au-u-1-1 au-u-2-5@medium">
+  <div class="au-c-body-container au-c-action-sidebar">
+    <AuToolbar @border="bottom" @size="large" @nowrap="true" tabindex="0">
+      <AuToolbarGroup>
+        <div>
+          <p class="au-u-margin-bottom-xsmall">
+            <Submissions::StatusPill @status={{this.model.review.status}}/>
+          </p>
+          <AuHeading @level="2" @skin="3">Melding {{this.model.organization.fullName}}</AuHeading>
+        </div>
+      </AuToolbarGroup>
+      <AuToolbarGroup>
+        <div class="au-o-box">
+          <LinkTo @route='supervision.submissions.index' class="link--icon--close">
+            <span class="au-u-hidden-visually">Venster sluiten</span>
+          </LinkTo>
+        </div>
+      </AuToolbarGroup>
+    </AuToolbar>
+    <div class="au-o-box au-c-body-container au-c-body-container--scroll">
+      <div class="au-u-margin-bottom">
+        <div class="au-o-grid">
+          <div class="au-o-grid__item au-u-1-2">
+            <AuLabel>Verstuurd door</AuLabel>
+            <p>
+              {{#if this.model.lastModifier.fullName}}
+                {{this.model.lastModifier.fullName}}
+              {{else if this.model.task.created}}
+                Automatisch aangemaakt bij publicatie
+              {{/if}}
+            </p>
+          </div>
+          <div class="au-o-grid__item au-u-1-2">
+            <AuLabel>Verstuurd op</AuLabel>
+            <p>{{moment-format this.model.sentDate 'DD-MM-YYYY'}}</p>
+          </div>
+        </div>
+      </div>
+      <Submissions::Form @submission={{this.model}}/>
+    </div>
+    <AuToolbar @border="top" @size="large" class="au-u-hide-on-print">
+        {{#if this.currentSession.canWrite}}
+          <Submissions::Review
+                  @model={{await this.model.review}}
+                  @status={{await this.model.review.status}}
+                  @onClose={{this.onCloseComponent}} />
+        {{else}}
+          <div class="button-group u-spacer--tiny">
+            <LinkTo @route="supervision.submissions.index" class="au-c-button au-c-button--secondary">Sluit venster</LinkTo>
+          </div>
+        {{/if}}
+    </AuToolbar>
+  </div>
+</div>
+

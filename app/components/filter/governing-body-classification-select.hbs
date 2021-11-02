@@ -1,0 +1,15 @@
+<div {{did-update this.updateSelectedValue @value}}>
+  <PowerSelectMultiple
+          @search={{perform this.search}}
+          @searchField={{"label"}}
+          @searchPlaceholder="Type om te zoeken..."
+          @searchEnabled={{true}}
+          @loadingMessage="Aan het laden..."
+          @options={{this.options}}
+          @selected={{this.selected}}
+          @onChange={{this.changeSelected}}
+          @allowClear={{true}} as |classificatie|>
+    {{classificatie.label}}
+  </PowerSelectMultiple>
+  <AuHelpText class="au-u-margin-none">vb. Burgemeester of gemeenteraad</AuHelpText>
+</div>

@@ -1,0 +1,56 @@
+<div id="main" itemprop="mainContentOfPage" role="main" tabindex="-1" class="au-c-main-container__content au-c-main-container__content--scroll">
+  <AuContentHeader @titlePartOne="Vlaanderen" @titlePartTwo="is lokaal bestuur">
+    <img sizes="50vw" src="/assets/images/inzendingen-header-1600.jpg" srcset="/assets/images/inzendingen-header-320.jpg 320w, /assets/images/inzendingen-header-1024.jpg 1024w, /assets/images/inzendingen-header-1600.jpg 1600w" alt="Foto van een laptop met daarop het vlaanderen logo.">
+  </AuContentHeader>
+
+  <section class="au-o-region-large">
+    <div class="au-o-layout au-o-layout--small">
+
+      <AuHeading @level="2" @skin="3">Kies een bestuurseenheid om mee in te loggen.</AuHeading>
+
+      <div class="au-o-region">
+        <MockLogin as |login|>
+          {{#if this.queryStore.isRunning}}
+            <AuLoader @size="small" />
+            <span class="au-u-hidden-visually">Aan het laden</span>
+          {{else}}
+            {{#if login.errorMessage}}
+              <AuAlert @alertIcon="info-circle" @alertTitle={{login.errorMessage}}  @alertskin={{"error"}}>{{login.errorMessage}}</AuAlert>
+            {{/if}}
+            {{!-- TODO: Transform to new appuniversum style --}}
+            <login.each-account @accounts={{this.model}} as |account|>
+              <WuInfoTile @class="u-spacer--tiny" as |i|>
+                <i.content>
+                  {{account.gebruiker.voornaam}} {{account.gebruiker.achternaam}}
+                </i.content>
+              </WuInfoTile>
+            </login.each-account>
+            <NumberPagination @page={{this.page}} @size={{this.size}} @nbOfItems={{this.model.length}} @total={{this.model.meta.count}} @links={{this.model.meta.pagination}} />
+          {{/if}}
+        </MockLogin>
+      </div>
+
+    </div>
+  </section>
+
+  <AuMainFooter>
+    <AuHeading @level="3" @skin="4">
+      Toezicht ABB is een officiële website van de Vlaamse overheid
+    </AuHeading>
+    <AuContent @skin="small">
+      <p>Uitgegeven door <a class="au-c-link" href="https://www.vlaanderen.be/organisaties/administratieve-diensten-van-de-vlaamse-overheid/beleidsdomein-kanselarij-en-bestuur/agentschap-binnenlands-bestuur">Agentschap Binnenlands Bestuur</a></p>
+      <ul class="au-c-list-horizontal">
+        <li class="au-c-list-horizontal__item">
+          <AuLink @route="legaal.disclaimer" @skin="secondary">Disclaimer</AuLink>
+        </li>
+        <li class="au-c-list-horizontal__item">
+          <AuLink @route="legaal.cookieverklaring" @skin="secondary">Cookieverklaring</AuLink>
+        </li>
+        <li class="au-c-list-horizontal__item">
+          <AuLink @route="legaal.toegankelijkheidsverklaring" @skin="secondary">Toegankelijkheidsverklaring</AuLink>
+        </li>
+      </ul>
+    </AuContent>
+  </AuMainFooter>
+</div>
+
