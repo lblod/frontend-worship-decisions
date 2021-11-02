@@ -20,12 +20,11 @@
             @size={{@size}} as |t|>
           <t.content class="au-c-data-table__table--small" as |c|>
             <c.header>
-
-                <AuDataTableThSortable @label="Provincie" @field="province" @currentSorting={{@sort}} @class="data-table__header-title au-u-visible-from@medium"/>
+              <AuDataTableThSortable @label="Provincie" @field="province" @currentSorting={{@sort}} @class="data-table__header-title au-u-visible-from@medium"/>
 
               <AuDataTableThSortable @label="Bestuurseenheid" @field="administrativeUnit" @currentSorting={{@sort}} @class="data-table__header-title"/>
 
-                <AuDataTableThSortable @label="Type bestuur" @field="administrativeUnitClassification" @currentSorting={{@sort}} @class="data-table__header-title au-u-visible-from@medium"/>
+              <AuDataTableThSortable @label="Type bestuur" @field="administrativeUnitClassification" @currentSorting={{@sort}} @class="data-table__header-title au-u-visible-from@medium"/>
 
               <AuDataTableThSortable @label="Categorie dossier" @field="decisionType" @currentSorting={{@sort}} @class="data-table__header-title"/>
 
@@ -35,13 +34,14 @@
             </c.header>
             <c.body as |row|>
 
-                <td class="au-u-visible-from@medium">{{row.province}}</td>
+              <td class="au-u-visible-from@medium">{{row.province}}</td>
 
-                <td style={{html-safe "max-width: 175px;"}}>{{row.administrativeUnit}}
-                  <p class="text-fade">{{row.administrativeUnitClassification}}</p>
-                </td>
+              <td style={{html-safe "max-width: 175px;"}}>{{row.administrativeUnit}}
+                <p class="text-fade">{{row.administrativeUnitClassification}}</p>
+              </td>
 
-                <td class="au-u-visible-from@medium">{{row.administrativeUnitClassification}}</td>
+              <td class="au-u-visible-from@medium">{{row.administrativeUnitClassification}}</td>
+
               <td style={{html-safe "max-width: 200px;"}}>
                 {{#if row.decisionType}}
                   <p>{{row.decisionType}}</p>
