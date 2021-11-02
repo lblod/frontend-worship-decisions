@@ -2,7 +2,7 @@
 
 module.exports = function (environment) {
   let ENV = {
-    modulePrefix: 'frontend-toezicht-abb',
+    modulePrefix: 'frontend-public-decisions',
     environment,
     rootURL: '/',
     locationType: 'auto',

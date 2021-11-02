@@ -1,5 +1,5 @@
 import EmberRouter from '@ember/routing/router';
-import config from 'frontend-toezicht-abb/config/environment';
+import config from 'frontend-public-decisions/config/environment';
 
 export default class Router extends EmberRouter {
   location = config.locationType;

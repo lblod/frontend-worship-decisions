@@ -1,7 +1,7 @@
 import { inject as service } from '@ember/service';
 import Route from '@ember/routing/route';
 import ApplicationRouteMixin from 'ember-simple-auth/mixins/application-route-mixin';
-import ENV from 'frontend-toezicht-abb/config/environment';
+import ENV from 'frontend-public-decisions/config/environment';
 import { getOwner } from '@ember/application';
 
 export default class ApplicationRoute extends Route.extend(ApplicationRouteMixin) {

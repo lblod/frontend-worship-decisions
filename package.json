@@ -1,11 +1,11 @@
 {
-  "name": "frontend-toezicht-abb",
+  "name": "frontend-public-decisions",
   "version": "0.25.6",
   "private": true,
   "description": "Frontend of the Toezicht ABB application",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/lblod/frontend-toezicht-abb.git"
+    "url": "git+https://github.com/lblod/frontend-public-decisions.git"
   },
   "license": "MIT",
   "author": "info@redpencil.io",

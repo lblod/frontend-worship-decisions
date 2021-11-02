@@ -1,4 +1,4 @@
-import snapshot from 'frontend-toezicht-abb/utils/snapshot';
+import snapshot from 'frontend-public-decisions/utils/snapshot';
 import { module, test } from 'qunit';
 
 module('Unit | Utility | snapshot', function() {

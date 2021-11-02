@@ -1,3 +1,3 @@
-# frontend-toezicht-abb
+# frontend-public-decisions
 
 Frontend of the Toezich ABB application
