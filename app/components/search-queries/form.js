@@ -1,19 +1,18 @@
-import Component from '@glimmer/component';
 import { inject as service } from '@ember/service';
+import Component from '@glimmer/component';
 import { tracked } from '@glimmer/tracking';
-
 import { ForkingStore } from '@lblod/ember-submission-form-fields';
 import { task } from 'ember-concurrency-decorators';
 import {
-  FORM,
-  FORM_GRAPHS,
-  RDF,
-  removeSourceData,
-  retrieveFormData,
-  retrieveMetaData,
-  retrieveSourceData,
-  saveSourceData,
-  TEMP_SOURCE_NODE,
+    FORM,
+    FORM_GRAPHS,
+    RDF,
+    removeSourceData,
+    retrieveFormData,
+    retrieveMetaData,
+    retrieveSourceData,
+    saveSourceData,
+    TEMP_SOURCE_NODE
 } from '../../utils/filter-form-helpers';
 
 export default class SearchQueriesFormComponent extends Component {

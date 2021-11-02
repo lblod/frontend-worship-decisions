@@ -1,12 +1,11 @@
-import Component from '@glimmer/component';
+import { warn } from '@ember/debug';
 import { inject as service } from '@ember/service';
-import {warn} from '@ember/debug';
+import Component from '@glimmer/component';
 import { tracked } from '@glimmer/tracking';
-
+import { ForkingStore } from '@lblod/ember-submission-form-fields';
 import rdflib from 'browser-rdflib';
+import { task } from 'ember-concurrency-decorators';
 import fetch from 'fetch';
-import {ForkingStore} from '@lblod/ember-submission-form-fields';
-import {task} from 'ember-concurrency-decorators';
 
 const RDF = new rdflib.Namespace("http://www.w3.org/1999/02/22-rdf-syntax-ns#");
 const FORM = new rdflib.Namespace("http://lblod.data.gift/vocabularies/forms/");

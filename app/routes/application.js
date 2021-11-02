@@ -1,8 +1,8 @@
-import { inject as service } from '@ember/service';
+import { getOwner } from '@ember/application';
 import Route from '@ember/routing/route';
+import { inject as service } from '@ember/service';
 import ApplicationRouteMixin from 'ember-simple-auth/mixins/application-route-mixin';
 import ENV from 'frontend-public-decisions/config/environment';
-import { getOwner } from '@ember/application';
 
 export default class ApplicationRoute extends Route.extend(ApplicationRouteMixin) {
   @service currentSession;

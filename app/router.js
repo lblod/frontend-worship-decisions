@@ -9,17 +9,6 @@ export default class Router extends EmberRouter {
 Router.map(function() {
   this.route('login');
 
-  this.route('toezicht', function() { // keep supporting old inzending URLs
-    this.route('inzendingen', function() {
-      this.route('show', { path: '/:id' });
-    });
-  });
-
-  this.route('supervision', function() {
-    this.route('submissions', function() {
-      this.route('show', { path: '/:id' });
-    });
-  });
   this.route('search', function() {
     this.route('submissions', function() {
       this.route('show', { path: '/:id' });
@@ -40,11 +29,4 @@ Router.map(function() {
 
   this.route('mock-login');
   this.route('help');
-
-  this.route('user', function() {
-    this.route('search-queries', function() {
-      this.route('new');
-      this.route('edit', { path: '/:id' });
-    });
-  });
 });

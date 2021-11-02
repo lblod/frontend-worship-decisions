@@ -1,7 +1,6 @@
-import SearchQueriesFormComponent from './form';
-import { action } from '@ember/object';
 import { task } from 'ember-concurrency-decorators';
 import { formStoreToQueryParams, queryParamsToFormStore } from '../../utils/filter-form-helpers';
+import SearchQueriesFormComponent from './form';
 
 export const FILTER_FORM_UUID = 'e025a601-b50b-4abd-a6de-d0c3b619795c';
 
@@ -19,18 +18,6 @@ export default class SearchQueriesFilterFormComponent extends SearchQueriesFormC
 
   willDestroy() {
     this.formStore.deregisterObserver(FILTER_FORM_UUID);
-  }
-
-  // USER ACTIONS
-
-  @action
-  loadFilters() {
-    this.router.transitionTo('user.search-queries');
-  }
-
-  @task
-  * saveFilter() {
-    yield this.router.transitionTo('user.search-queries.new', formStoreToQueryParams(this.formStore, this.sourceNode));
   }
 
   // NOTE: the problem here lies in that if an outsider makes changes in the store,
