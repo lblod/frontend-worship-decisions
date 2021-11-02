@@ -12,17 +12,8 @@ export default class Submission extends Model {
   @attr source;
   @attr uri;
   @attr href;
-
-  @belongsTo('gebruiker') creator;
-  @belongsTo('gebruiker') lastModifier;
   @belongsTo('form-data') formData;
   @belongsTo('bestuurseenheid') organization;
-  @belongsTo('vendor') publisher;
   @belongsTo('submission-document') submissionDocument;
-  @belongsTo('submission-document-status') status;
   @hasMany('file') files;
-  @belongsTo('automatic-submission-task') task;
-  @belongsTo('submission-review') review;
-  @belongsTo('inzending-voor-toezicht') inzendingVoorToezicht;
 }
-
