@@ -5,7 +5,6 @@ import Route from '@ember/routing/route';
 import search from '../../utils/mu-search';
 import Snapshot from '../../utils/snapshot';
 import {tracked} from '@glimmer/tracking';
-import {TREAT_STATUS} from '../../models/submission-review-status';
 import { getQueryParams } from '../../utils/filter-form-helpers';
 
 export default class SearchSubmissionsRoute extends Route {
@@ -55,7 +54,6 @@ export default class SearchSubmissionsRoute extends Route {
     if (params.dateOfEntryIntoForceTo) query[':lte:dateOfEntryIntoForce'] = params.dateOfEntryIntoForceTo;
     if (params.dateNoLongerInForceFrom) query[':gte:dateNoLongerInForce'] = params.dateNoLongerInForceFrom;
     if (params.dateNoLongerInForceTo) query[':lte:dateNoLongerInForce'] = params.dateNoLongerInForceTo;
-    if (params.status) query[':term:statusURI'] = TREAT_STATUS;
 
     this.lastParams.commit();
 
