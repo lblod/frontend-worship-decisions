@@ -48,9 +48,7 @@ export default class CurrentSessionService extends Service {
         groupContent: group
       });
 
-      this.canReadVlabel = this.canAccess('ABBDatabankToezicht-DatabankToezichtVLABEL');
-      this.canRead = this.canAccess('ABBDatabankToezicht-DatabankToezichtLezer') || this.canAccess('ABBDatabankToezicht-DatabankToezichtEditeur');
-      this.canWrite = this.canAccess('ABBDatabankToezicht-DatabankToezichtEditeur');
+      this.canRead = this.canAccess('PubliekeBesluitendatabank-BesluitendatabankLezer');
     }
   }
 
