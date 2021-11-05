@@ -1,18 +1,17 @@
 import { getOwner } from '@ember/application';
 import Route from '@ember/routing/route';
 import { inject as service } from '@ember/service';
-import ApplicationRouteMixin from 'ember-simple-auth/mixins/application-route-mixin';
 import ENV from 'frontend-public-decisions/config/environment';
 
-export default class ApplicationRoute extends Route.extend(ApplicationRouteMixin) {
+export default class ApplicationRoute extends Route {
   @service currentSession;
 
   beforeModel() {
-    return this._loadCurrentSession();
+    return this.loadCurrentSession();
   }
 
   async sessionAuthenticated() {
-    await this._loadCurrentSession();
+    await this.loadCurrentSession();
 
     // The current session needs to be loaded before we start transitioning
     // because the transitioning depends on the user roles loaded in the current session
@@ -40,7 +39,7 @@ export default class ApplicationRoute extends Route.extend(ApplicationRouteMixin
     window.location.replace(logoutUrl);
   }
 
-  _loadCurrentSession() {
+  loadCurrentSession() {
     return this.currentSession.load().catch(() => this.session.invalidate());
   }
 }

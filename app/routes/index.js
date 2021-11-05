@@ -1,9 +1,11 @@
 import Route from '@ember/routing/route';
-import AuthenticatedRouteMixin from 'ember-simple-auth/mixins/authenticated-route-mixin';
+import { inject as service } from '@ember/service';
 
-export default class IndexRoute extends Route.extend(AuthenticatedRouteMixin) {
+export default class IndexRoute extends Route {
+  @service session;
 
-  beforeModel() {
+  beforeModel(transition) {
+    this.session.requireAuthentication(transition, 'login');
     this.transitionTo('search.submissions');
     super.beforeModel(...arguments);
   }
