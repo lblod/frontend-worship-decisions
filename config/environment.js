@@ -32,7 +32,7 @@ module.exports = function (environment) {
           baseUrl: 'https://authenticatie-ti.vlaanderen.be/op/v1/auth',
           scope: 'openid rrn vo profile',
           redirectUri: 'https://loket.lblod.info/authorization/callback',
-          logoutUrl: 'https://authenticatie-ti.vlaanderen.be/op/v1/logout'
+          logoutUrl: 'https://authenticatie-ti.vlaanderen.be/op/v1/logout',
         },
       },
     },
