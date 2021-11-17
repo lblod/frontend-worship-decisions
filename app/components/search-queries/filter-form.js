@@ -1,11 +1,13 @@
 import { task } from 'ember-concurrency-decorators';
-import { formStoreToQueryParams, queryParamsToFormStore } from '../../utils/filter-form-helpers';
+import {
+  formStoreToQueryParams,
+  queryParamsToFormStore,
+} from '../../utils/filter-form-helpers';
 import SearchQueriesFormComponent from './form';
 
 export const FILTER_FORM_UUID = 'e025a601-b50b-4abd-a6de-d0c3b619795c';
 
 export default class SearchQueriesFilterFormComponent extends SearchQueriesFormComponent {
-
   constructor(owner, args) {
     super(FILTER_FORM_UUID, owner, args);
   }
@@ -24,7 +26,7 @@ export default class SearchQueriesFilterFormComponent extends SearchQueriesFormC
   // the field components are not aware of this. There for, for now, we force the form to rerender by temporarily
   // changing the "show" argument.
   @task
-  * resetFilters() {
+  *resetFilters() {
     yield super.setupForm(FILTER_FORM_UUID);
     this.updateQueryParams();
     this.registerObserver();
@@ -45,7 +47,11 @@ export default class SearchQueriesFilterFormComponent extends SearchQueriesFormC
    * Will populate the form-store with the given query-parameters.
    */
   loadQueryParams() {
-    queryParamsToFormStore(this.args.queryParams, this.formStore, this.sourceNode);
+    queryParamsToFormStore(
+      this.args.queryParams,
+      this.formStore,
+      this.sourceNode
+    );
   }
 
   updateQueryParams() {

@@ -13,8 +13,8 @@ module.exports = function (environment) {
       },
       EXTEND_PROTOTYPES: {
         // Prevent Ember Data from overriding Date.parse.
-        Date: false
-      }
+        Date: false,
+      },
     },
 
     APP: {
@@ -22,27 +22,26 @@ module.exports = function (environment) {
       // when it is created
     },
     moment: {
-      allowEmpty: true
+      allowEmpty: true,
     },
-    //TODO: activate once ACM/IDM is ready
-    // torii: {
-    //   disableRedirectInitializer: true,
-    //   providers: {
-    //     'acmidm-oauth2': {
-    //       apiKey: '68799bf1-f9eb-4d23-be16-c07c31ae342c',
-    //       baseUrl: 'https://authenticatie-ti.vlaanderen.be/op/v1/auth',
-    //       scope: 'openid vo profile ABBDatabankToezicht',
-    //       redirectUri: 'https://besluiten.abb.lblod.info/authorization/callback',
-    //       logoutUrl: 'https://authenticatie-ti.vlaanderen.be/op/v1/logout'
-    //     }
-    //   }
-    // },
+    torii: {
+      disableRedirectInitializer: true,
+      providers: {
+        'acmidm-oauth2': {
+          apiKey: 'your-key',
+          baseUrl: 'https://authenticatie-ti.vlaanderen.be/op/v1/auth',
+          scope: 'openid rrn vo profile',
+          redirectUri: 'https://loket.lblod.info/authorization/callback',
+          logoutUrl: 'https://authenticatie-ti.vlaanderen.be/op/v1/logout',
+        },
+      },
+    },
     browserUpdate: {
-      vs: {i:11,f:-3,o:-3,s:-3,c:-3},
+      vs: { i: 11, f: -3, o: -3, s: -3, c: -3 },
       style: 'corner',
       l: 'nl',
-      shift_page_down: false
-    }
+      shift_page_down: false,
+    },
   };
 
   if (environment === 'development') {

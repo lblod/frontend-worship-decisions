@@ -7,17 +7,17 @@ import rdflib from 'browser-rdflib';
 import { task } from 'ember-concurrency-decorators';
 import fetch from 'fetch';
 
-const RDF = new rdflib.Namespace("http://www.w3.org/1999/02/22-rdf-syntax-ns#");
-const FORM = new rdflib.Namespace("http://lblod.data.gift/vocabularies/forms/");
+const RDF = new rdflib.Namespace('http://www.w3.org/1999/02/22-rdf-syntax-ns#');
+const FORM = new rdflib.Namespace('http://lblod.data.gift/vocabularies/forms/');
 
 export default class SubmissionsFormComponent extends Component {
-  @service store
-  @service router
+  @service store;
+  @service router;
 
-  @tracked form
-  @tracked formStore
-  @tracked graphs
-  @tracked sourceNode
+  @tracked form;
+  @tracked formStore;
+  @tracked graphs;
+  @tracked sourceNode;
 
   constructor() {
     super(...arguments);
@@ -36,27 +36,35 @@ export default class SubmissionsFormComponent extends Component {
     }
 
     const response = yield fetch(`/submission-forms/${submissionDocument.id}`);
-    const {source, additions, removals, meta, form} = yield response.json();
+    const { source, additions, removals, meta, form } = yield response.json();
 
     // Prepare data in forking store
 
     const formStore = new ForkingStore();
 
-    const metaGraph = new rdflib.NamedNode("http://data.lblod.info/metagraph");
-    formStore.parse(meta, metaGraph, "text/turtle");
-    const formGraph = new rdflib.NamedNode("http://data.lblod.info/form");
-    formStore.parse(form, formGraph, "text/turtle");
+    const metaGraph = new rdflib.NamedNode('http://data.lblod.info/metagraph');
+    formStore.parse(meta, metaGraph, 'text/turtle');
+    const formGraph = new rdflib.NamedNode('http://data.lblod.info/form');
+    formStore.parse(form, formGraph, 'text/turtle');
 
-    const sourceGraph = new rdflib.NamedNode(`http://data.lblod.info/submission-document/data/${submissionDocument.id}`);
+    const sourceGraph = new rdflib.NamedNode(
+      `http://data.lblod.info/submission-document/data/${submissionDocument.id}`
+    );
     if (removals || additions) {
-      formStore.loadDataWithAddAndDelGraph(source, sourceGraph, additions, removals, "text/turtle");
+      formStore.loadDataWithAddAndDelGraph(
+        source,
+        sourceGraph,
+        additions,
+        removals,
+        'text/turtle'
+      );
     } else {
-      formStore.parse(source, sourceGraph, "text/turtle");
+      formStore.parse(source, sourceGraph, 'text/turtle');
     }
 
     this.formStore = formStore;
-    this.graphs = {formGraph, sourceGraph, metaGraph};
-    this.form = formStore.any(undefined, RDF("type"), FORM("Form"), formGraph);
+    this.graphs = { formGraph, sourceGraph, metaGraph };
+    this.form = formStore.any(undefined, RDF('type'), FORM('Form'), formGraph);
     this.sourceNode = new rdflib.NamedNode(submissionDocument.uri);
   }
 }

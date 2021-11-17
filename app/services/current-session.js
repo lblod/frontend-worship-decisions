@@ -1,5 +1,4 @@
 import Service, { inject as service } from '@ember/service';
-import { get } from '@ember/object';
 import { waitForProperty } from 'ember-concurrency';
 import { task } from 'ember-concurrency-decorators';
 import { tracked } from '@glimmer/tracking';
@@ -30,10 +29,16 @@ export default class CurrentSessionService extends Service {
   async load() {
     if (this.session.isAuthenticated) {
       const session = this.session;
-      const account = await this.store.find('account', get(session, 'data.authenticated.relationships.account.data.id'));
+      const account = await this.store.find(
+        'account',
+        session.data.authenticated.relationships.account.data.id
+      );
       const user = await account.gebruiker;
-      const group = await this.store.find('bestuurseenheid', get(session, 'data.authenticated.relationships.group.data.id'));
-      const roles = await get(session, 'data.authenticated.data.attributes.roles');
+      const group = await this.store.find(
+        'bestuurseenheid',
+        session.data.authenticated.relationships.group.data.id
+      );
+      const roles = await session.data.authenticated.data.attributes.roles;
       this._account = account;
       this._user = user;
       this._roles = roles;
@@ -41,14 +46,14 @@ export default class CurrentSessionService extends Service {
 
       // The naming is off, but account,user,roles are taken for the
       // promises in a currently public API.
-      this.setProperties({
-        accountContent: account,
-        userContent: user,
-        rolesContent: roles,
-        groupContent: group
-      });
+      this.accountContent = account;
+      this.userContent = user;
+      this.rolesContent = roles;
+      this.groupContent = group;
 
-      this.canRead = this.canAccess('PubliekeBesluitendatabank-BesluitendatabankLezer');
+      this.canRead = this.canAccess(
+        'PubliekeBesluitendatabank-BesluitendatabankLezer'
+      );
     }
   }
 
@@ -58,8 +63,8 @@ export default class CurrentSessionService extends Service {
 
   // constructs a task which resolves in the promise
   @task
-  *makePropertyPromise (property) {
+  *makePropertyPromise(property) {
     yield waitForProperty(this, property);
-    return this.get(property);
+    return this.property;
   }
 }
