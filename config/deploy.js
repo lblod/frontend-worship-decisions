@@ -1,7 +1,7 @@
 /* eslint-env node */
 'use strict';
 
-module.exports = function (deployTarget) {
+module.exports = function () {
   //see https://github.com/ember-cli-deploy/ember-cli-deploy-revision-data/issues/52
   process.env.GIT_DISCOVERY_ACROSS_FILESYSTEM = 1;
   let ENV = {
@@ -25,9 +25,6 @@ module.exports = function (deployTarget) {
       arg: ['--verbose'],
     },
   };
-
-  if (deployTarget === 'production') {
-  }
 
   // Note: if you need to build some configuration asynchronously, you can return
   // a promise that resolves with the ENV object instead of returning the
