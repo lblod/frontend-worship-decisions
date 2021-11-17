@@ -6,7 +6,6 @@ export default class SearchSubmissionsShowRoute extends Route {
       include: [
         'organization.classificatie',
         'organization.provincie',
-        'review.status',
         'form-data.types',
         'last-modifier',
       ].join(','),
