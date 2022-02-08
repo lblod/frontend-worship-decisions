@@ -25,18 +25,18 @@ module.exports = function (environment) {
       allowEmpty: true
     },
     //TODO: activate once ACM/IDM is ready
-    // torii: {
-    //   disableRedirectInitializer: true,
-    //   providers: {
-    //     'acmidm-oauth2': {
-    //       apiKey: '68799bf1-f9eb-4d23-be16-c07c31ae342c',
-    //       baseUrl: 'https://authenticatie-ti.vlaanderen.be/op/v1/auth',
-    //       scope: 'openid vo profile ABBDatabankToezicht',
-    //       redirectUri: 'https://besluiten.abb.lblod.info/authorization/callback',
-    //       logoutUrl: 'https://authenticatie-ti.vlaanderen.be/op/v1/logout'
-    //     }
-    //   }
-    // },
+    torii: {
+      disableRedirectInitializer: true,
+      providers: {
+        'acmidm-oauth2': {
+          apiKey: 'b772fce4-ebd8-4980-b51c-8e0d73fe75d2',
+          baseUrl: 'https://authenticatie-ti.vlaanderen.be/op/v1/auth',
+          scope: 'openid vo profile abb_besluitendatabank',
+          redirectUri: 'https://besluiten.lokaalbestuur.lblod.info/authorization/callback',
+          logoutUrl: 'https://authenticatie-ti.vlaanderen.be/op/v1/logout'
+        }
+      }
+    },
     browserUpdate: {
       vs: {i:11,f:-3,o:-3,s:-3,c:-3},
       style: 'corner',
