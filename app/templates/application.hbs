@@ -11,8 +11,19 @@
         <AuIcon @icon="logout" @alignment="left" /> Afmelden
       </AuButton>
     {{else}}
-      <Acmidm::Login role="menuitem" @styles="au-c-button au-c-button--tertiary">
-        <AuIcon @icon="login" @alignment="left" />Aanmelden
+      <Acmidm::Login as |acmidm|>
+        <AuButton
+          role="menuitem"
+          @styles="au-c-button au-c-button--tertiary"
+          @loading={{acmidm.isAuthenticating}}
+          @disabled={{acmidm.isAuthenticating}}
+          {{on "click" acmidm.login}}
+        >
+          Meld u aan
+        </AuButton>
+        {{#if acmidm.errorMessage}}
+          <AuAlert @alertIcon="alert-triangle" @alertTitle={{acmidm.errorMessage}} />
+        {{/if}}
       </Acmidm::Login>
     {{/if}}
   </li>
