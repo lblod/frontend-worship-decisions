@@ -13,8 +13,8 @@ module.exports = function (environment) {
       },
       EXTEND_PROTOTYPES: {
         // Prevent Ember Data from overriding Date.parse.
-        Date: false
-      }
+        Date: false,
+      },
     },
 
     APP: {
@@ -22,7 +22,7 @@ module.exports = function (environment) {
       // when it is created
     },
     moment: {
-      allowEmpty: true
+      allowEmpty: true,
     },
     //TODO: activate once ACM/IDM is ready
     torii: {
@@ -38,11 +38,11 @@ module.exports = function (environment) {
       }
     },
     browserUpdate: {
-      vs: {i:11,f:-3,o:-3,s:-3,c:-3},
+      vs: { i: 11, f: -3, o: -3, s: -3, c: -3 },
       style: 'corner',
       l: 'nl',
-      shift_page_down: false
-    }
+      shift_page_down: false,
+    },
   };
 
   if (environment === 'development') {
