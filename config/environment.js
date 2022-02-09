@@ -31,7 +31,7 @@ module.exports = function (environment) {
         'acmidm-oauth2': {
           apiKey: 'b772fce4-ebd8-4980-b51c-8e0d73fe75d2',
           baseUrl: 'https://authenticatie-ti.vlaanderen.be/op/v1/auth',
-          scope: 'openid vo profile abb_besluitendatabank',
+          scope: 'openid vo profile ABBBesluitenDatabank',
           redirectUri: 'https://besluiten.lokaalbestuur.lblod.info/authorization/callback',
           logoutUrl: 'https://authenticatie-ti.vlaanderen.be/op/v1/logout'
         }
