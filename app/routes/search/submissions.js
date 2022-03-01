@@ -77,7 +77,7 @@ export default class SearchSubmissionsRoute extends Route {
       '/search/submissions',
       params.page,
       params.size,
-      params.sort,
+      params.sort ? params.sort : '-sessionDatetime',
       query,
       function (item) {
         item.attributes.id = item.id;
