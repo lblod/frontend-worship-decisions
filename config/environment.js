@@ -29,11 +29,11 @@ module.exports = function (environment) {
       disableRedirectInitializer: true,
       providers: {
         'acmidm-oauth2': {
-          apiKey: 'b772fce4-ebd8-4980-b51c-8e0d73fe75d2',
-          baseUrl: 'https://authenticatie-ti.vlaanderen.be/op/v1/auth',
+          apiKey: '{{OAUTH_API_KEY}}',
+          baseUrl: '{{OAUTH_BASE_URL}}',
           scope: 'openid vo profile abb_besluitendatabank',
-          redirectUri: 'https://besluiten.lokaalbestuur.lblod.info/authorization/callback',
-          logoutUrl: 'https://authenticatie-ti.vlaanderen.be/op/v1/logout'
+          redirectUri: '{{OAUTH_REDIRECT_URL}}',
+          logoutUrl: '{{OAUTH_LOGOUT_URL}}'
         }
       }
     },
@@ -41,7 +41,7 @@ module.exports = function (environment) {
       vs: { i: 11, f: -3, o: -3, s: -3, c: -3 },
       style: 'corner',
       l: 'nl',
-      shift_page_down: false,
+      shift_page_down: false
     },
   };
 
@@ -63,14 +63,6 @@ module.exports = function (environment) {
 
     ENV.APP.rootElement = '#ember-testing';
     ENV.APP.autoboot = false;
-  }
-
-  if ('{{DEPLOY_ENV}}' === 'production') {
-    //TODO: activate once ACM/IDM is ready
-    ENV['torii']['providers']['acmidm-oauth2']['apiKey'] = '769f6537-6f75-48c6-b5d0-5fa7c6afdaa1';
-    ENV['torii']['providers']['acmidm-oauth2']['baseUrl'] = 'https://authenticatie.vlaanderen.be/op/v1/auth';
-    ENV['torii']['providers']['acmidm-oauth2']['redirectUri'] = 'https://besluiten.lokaalbestuur.vlaanderen.be/authorization/callback';
-    ENV['torii']['providers']['acmidm-oauth2']['logoutUrl'] = 'https://authenticatie.vlaanderen.be/op/v1/logout';
   }
 
   return ENV;
