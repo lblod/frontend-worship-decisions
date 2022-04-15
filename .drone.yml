@@ -68,3 +68,16 @@ steps:
 trigger:
   event:
     - tag
+---
+kind: secret
+name: docker_username
+data: xZslq485H302HoIP3MHO1mW9Mc7xDikPgXBkSGH/pFTMYxAgbAAmdA==
+---
+kind: secret
+name: docker_password
+data: KuzOThczhYWILRiJlyR/8jNcDhx1FpOgkRRwiDixqlC93X8PT2Eihto+zufbc85Uc0vG3yIRgKxEzZtAH1GSKg==
+---
+kind: signature
+hmac: 1ae34e51bc3a85b9d894716aab66750fa2664033e841955802b84187737b89b6
+
+...
