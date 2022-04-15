@@ -65,7 +65,7 @@ module.exports = function (environment) {
     ENV.APP.autoboot = false;
   }
 
-  if (process.env.DEPLOY_ENV === 'production') {
+  if ('{{DEPLOY_ENV}}' === 'production') {
     //TODO: activate once ACM/IDM is ready
     ENV['torii']['providers']['acmidm-oauth2']['apiKey'] = '769f6537-6f75-48c6-b5d0-5fa7c6afdaa1';
     ENV['torii']['providers']['acmidm-oauth2']['baseUrl'] = 'https://authenticatie.vlaanderen.be/op/v1/auth';

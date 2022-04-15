@@ -6,7 +6,7 @@ WORKDIR /app
 COPY package.json .
 RUN npm install
 COPY . .
-RUN DEPLOY_ENV=production ember build -prod
+RUN ember build -prod
 
 FROM semtech/static-file-service:0.1.0
 
