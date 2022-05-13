@@ -1,6 +1,6 @@
 import Service, { inject as service } from '@ember/service';
 import { waitForProperty } from 'ember-concurrency';
-import { task } from 'ember-concurrency-decorators';
+import { task } from 'ember-concurrency';
 import { tracked } from '@glimmer/tracking';
 
 export default class CurrentSessionService extends Service {

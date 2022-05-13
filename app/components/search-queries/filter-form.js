@@ -1,4 +1,4 @@
-import { task } from 'ember-concurrency-decorators';
+import { task } from 'ember-concurrency';
 import {
   formStoreToQueryParams,
   queryParamsToFormStore,
