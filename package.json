@@ -47,7 +47,7 @@
     "broccoli-asset-rev": "^3.0.0",
     "browser-rdflib": "^1.1.0",
     "ember-auto-focus": "^2.0.4",
-    "ember-auto-import": "^1.10.1",
+    "ember-auto-import": "^2.4.1",
     "ember-awesome-macros": "^5.0.0",
     "ember-browser-update": "^0.1.0",
     "ember-classic-decorator": "^1.0.7",
@@ -104,7 +104,8 @@
     "qunit": "^2.13.0",
     "qunit-dom": "^1.6.0",
     "sass": "^1.48.0",
-    "uuid": "^7.0.3"
+    "uuid": "^7.0.3",
+    "webpack": "^5.72.1"
   },
   "engines": {
     "node": "10.* || >= 12"
