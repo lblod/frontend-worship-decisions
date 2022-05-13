@@ -4,7 +4,7 @@ import Component from '@glimmer/component';
 import { tracked } from '@glimmer/tracking';
 import { ForkingStore } from '@lblod/ember-submission-form-fields';
 import rdflib from 'browser-rdflib';
-import { task } from 'ember-concurrency-decorators';
+import { task } from 'ember-concurrency';
 import fetch from 'fetch';
 
 const RDF = new rdflib.Namespace('http://www.w3.org/1999/02/22-rdf-syntax-ns#');
