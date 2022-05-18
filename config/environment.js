@@ -33,15 +33,15 @@ module.exports = function (environment) {
           baseUrl: '{{OAUTH_BASE_URL}}',
           scope: 'openid vo profile abb_besluitendatabank',
           redirectUri: '{{OAUTH_REDIRECT_URL}}',
-          logoutUrl: '{{OAUTH_LOGOUT_URL}}'
-        }
-      }
+          logoutUrl: '{{OAUTH_LOGOUT_URL}}',
+        },
+      },
     },
     browserUpdate: {
       vs: { i: 11, f: -3, o: -3, s: -3, c: -3 },
       style: 'corner',
       l: 'nl',
-      shift_page_down: false
+      shift_page_down: false,
     },
   };
 
