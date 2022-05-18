@@ -14,6 +14,9 @@ module.exports = function (defaults) {
         'node_modules/@appuniversum/ember-appuniversum/app/styles',
       ],
     },
+    '@lblod/ember-submission-form-fields': {
+      includeTableComponents: false,
+    },
   });
   // Use `app.import` to add additional libraries to the generated
   // output files.
