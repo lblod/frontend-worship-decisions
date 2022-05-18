@@ -6,7 +6,7 @@
     </AuLink>
   </li>
   <li class="au-c-list-horizontal__item">
-    {{#if session.isAuthenticated}}
+    {{#if this.session.isAuthenticated}}
       <AuButton @skin="link" role="menuitem" {{ on "click" this.logout}}>
         <AuIcon @icon="logout" @alignment="left" /> Afmelden
       </AuButton>
