@@ -33,15 +33,24 @@ module.exports = function (environment) {
           baseUrl: '{{OAUTH_BASE_URL}}',
           scope: 'openid vo profile abb_besluitendatabank',
           redirectUri: '{{OAUTH_REDIRECT_URL}}',
-          logoutUrl: '{{OAUTH_LOGOUT_URL}}'
-        }
-      }
+          logoutUrl: '{{OAUTH_LOGOUT_URL}}',
+        },
+      },
     },
     browserUpdate: {
       vs: { i: 11, f: -3, o: -3, s: -3, c: -3 },
       style: 'corner',
       l: 'nl',
-      shift_page_down: false
+      shift_page_down: false,
+    },
+    // This config can be removed once the auto-startup logic is removed from ember-plausible:
+    // https://github.com/redpencilio/ember-plausible/issues/4
+    'ember-plausible': {
+      enabled: false,
+    },
+    plausible: {
+      domain: '{{ANALYTICS_APP_DOMAIN}}',
+      apiHost: '{{ANALYTICS_API_HOST}}',
     },
   };
 

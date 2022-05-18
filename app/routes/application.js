@@ -5,9 +5,10 @@ import ENV from 'frontend-public-decisions/config/environment';
 
 export default class ApplicationRoute extends Route {
   @service currentSession;
+  @service plausible;
 
   beforeModel() {
-    return this.loadCurrentSession();
+    return Promise.all([this.startAnalytics(), this.loadCurrentSession()]);
   }
 
   async sessionAuthenticated() {
@@ -41,5 +42,19 @@ export default class ApplicationRoute extends Route {
 
   loadCurrentSession() {
     return this.currentSession.load().catch(() => this.session.invalidate());
+  }
+
+  async startAnalytics() {
+    let { domain, apiHost } = ENV.plausible;
+
+    if (
+      domain !== '{{ANALYTICS_APP_DOMAIN}}' &&
+      apiHost !== '{{ANALYTICS_API_HOST}}'
+    ) {
+      await this.plausible.enable({
+        domain,
+        apiHost,
+      });
+    }
   }
 }
