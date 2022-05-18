@@ -1,26 +1,15 @@
 <main class="au-c-main-container__content au-c-main-container__content--scroll" id="content">
   <section class="au-o-region">
-    <div class="au-o-layout">
-      <AuHeading @level="1" @skin="1" class="au-u-margin-bottom">Contact</AuHeading>
-      <div class="au-o-region">
-        <form class="au-u-margin-bottom">
-          <AuLabel for="select">Waar gaat uw bericht over?</AuLabel>
+    <div class="au-o-layout au-o-flow">
+      <AuHeading @level="1" @skin="1">Contact</AuHeading>
+      <ContactForm />
 
-          {{!-- TODO: replace radio buttons with appuniversum radiobuttions --}}
-          <div class="au-o-region-small">
-            <WuRadioButton @label="Een functionaliteit, bug of probleem" @value="LoketLokaalBestuur@vlaanderen.be?subject=Functionaliteit of bug of probleem" @onChange={{fn (mut this.mailto)}} @isBlock={{true}} />
-            <WuRadioButton @label="Een inhoudelijke vraag" @value="LoketLokaalBestuur@vlaanderen.be?subject=Inhoudelijke vraag" @onChange={{fn (mut this.mailto)}} @isBlock={{true}} />
-          </div>
-
-          {{#if this.mailto}}
-            <a href={{concat "mailto:" this.mailto}} class="au-c-button au-c-button--large">Bericht versturen</a>
-          {{else}}
-            <AuButton @disabled="true" @size="large">Bericht versturen</AuButton>
-          {{/if}}
-        </form>
-
-        <p>Of neem rechtstreeks contact op via mail <a href="mailto:LoketLokaalBestuur@vlaanderen.be">LoketLokaalBestuur@vlaanderen.be</a>.</p>
-      </div>
+      <p>
+        Of neem rechtstreeks contact op via mail
+        <AuLinkExternal href="mailto:LoketLokaalBestuur@vlaanderen.be">
+          LoketLokaalBestuur@vlaanderen.be
+        </AuLinkExternal>.
+      </p>
     </div>
   </section>
   <AuMainFooter>
