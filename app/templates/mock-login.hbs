@@ -17,15 +17,31 @@
             {{#if login.errorMessage}}
               <AuAlert @icon="info-circle" @title={{login.errorMessage}}  @skin="error">{{login.errorMessage}}</AuAlert>
             {{/if}}
-            {{!-- TODO: Transform to new appuniversum style --}}
             <login.each-account @accounts={{this.model}} as |account|>
-              <WuInfoTile @class="u-spacer--tiny" as |i|>
-                <i.content>
+                <div class="au-o-box au-o-box--small au-c-card au-u-margin-bottom-small">
+                  <p>
                   {{account.gebruiker.voornaam}} {{account.gebruiker.achternaam}}
-                </i.content>
-              </WuInfoTile>
+                  </p>
+                  {{#if (await account.gebruiker.bestuurseenheden.firstObject.alternatieveNaam)}}
+                  <AuHr/>
+                  <p>
+                    <span class="au-c-info-text">Alternatieve naam:</span>
+                    {{#each (await account.gebruiker.bestuurseenheden) as |bestuurseenheid|}}
+                      {{#each bestuurseenheid.alternatieveNaam as |alternatieveNaam|}}
+                        <AuPill>{{alternatieveNaam}}</AuPill>
+                      {{/each}}
+                    {{/each}}
+                  </p>
+                  {{/if}}
+                </div>
             </login.each-account>
-            <NumberPagination @page={{this.page}} @size={{this.size}} @nbOfItems={{this.model.length}} @total={{this.model.meta.count}} @links={{this.model.meta.pagination}} />
+              <AuDataTableNumberPagination
+                @page={{this.page}}
+                @size={{this.size}}
+                @nbOfItems={{this.model.length}}
+                @total={{this.model.meta.count}}
+                @links={{this.model.meta.pagination}}
+              />
           {{/if}}
         </MockLogin>
       </div>
