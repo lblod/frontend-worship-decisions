@@ -43,7 +43,7 @@
     "browser-rdflib": "^1.1.0",
     "ember-auto-focus": "^2.0.4",
     "ember-auto-import": "^2.4.1",
-    "ember-awesome-macros": "^5.0.0",
+    "ember-awesome-macros": "^6.0.0",
     "ember-browser-update": "^0.1.0",
     "ember-classic-decorator": "^1.0.7",
     "ember-cli": "~3.24.0",
