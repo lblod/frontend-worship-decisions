@@ -76,7 +76,7 @@
     "ember-moment": "^10.0.0",
     "ember-mu-transform-helpers": "^2.0.0",
     "ember-plausible": "^0.1.0",
-    "ember-power-select": "^4.0.0",
+    "ember-power-select": "^5.0.4",
     "ember-promise-helpers": "^2.0.0",
     "ember-qunit": "^5.1.1",
     "ember-resolver": "^8.0.2",
