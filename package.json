@@ -26,7 +26,8 @@
     "test:ember": "ember test"
   },
   "overrides": {
-    "@embroider/macros": "0.50.0"
+    "@embroider/macros": "0.50.0",
+    "ember-style-modifier": "^0.8.0"
   },
   "devDependencies": {
     "@appuniversum/ember-appuniversum": "^1.2.1",
