@@ -7,6 +7,6 @@ export default class SearchSubmissionsShowController extends Controller {
 
   @action
   onCloseComponent() {
-    this.transitionToRoute('search.submissions.index');
+    this.router.transitionTo('search.submissions.index');
   }
 }

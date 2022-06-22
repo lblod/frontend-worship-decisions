@@ -4,6 +4,7 @@ import { inject as service } from '@ember/service';
 import ENV from 'frontend-public-decisions/config/environment';
 
 export default class ApplicationRoute extends Route {
+  @service router;
   @service currentSession;
   @service session;
   @service plausible;
@@ -29,10 +30,10 @@ export default class ApplicationRoute extends Route {
       attemptedTransition.retry();
       this.session.attemptedTransition = null;
     } else if (redirectTarget) {
-      this.transitionTo(redirectTarget);
+      this.router.transitionTo(redirectTarget);
       cookies.clear('ember_simple_auth-redirectTarget');
     } else {
-      this.transitionTo(this.routeAfterAuthentication);
+      this.router.transitionTo(this.routeAfterAuthentication);
     }
     // End of copy from ApplicationRouteMixin.sessionAuthenticated
   }

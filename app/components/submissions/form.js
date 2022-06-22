@@ -32,7 +32,7 @@ export default class SubmissionsFormComponent extends Component {
 
     if (!submissionDocument) {
       warn('No submission document. Transitioning to index.');
-      this.router.transitionToRoute('supervision.submissions');
+      this.router.transitionTo('supervision.submissions');
     }
 
     const response = yield fetch(`/submission-forms/${submissionDocument.id}`);
