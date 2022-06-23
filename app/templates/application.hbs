@@ -5,13 +5,13 @@
       Help
     </AuLink>
   </li>
-  <li class="au-c-list-horizontal__item">
+  <li class="au-c-list-horizontal__item" role="menu">
     {{#if this.session.isAuthenticated}}
       <AuButton @skin="link" role="menuitem" {{ on "click" this.logout}}>
         <AuIcon @icon="logout" @alignment="left" /> Afmelden
       </AuButton>
     {{else}}
-      <Acmidm::Login as |acmidm|>
+      <Acmidm::Login role="menu" as |acmidm|>
         <AuButton
           role="menuitem"
           @styles="au-c-button au-c-button--tertiary"
