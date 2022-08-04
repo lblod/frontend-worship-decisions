@@ -42,7 +42,7 @@
   position: absolute;
   right: 0;
   max-width: 480px;
-  top: $au-unit-large - $au-unit-tiny/2;
+  top: $au-unit-large - calc($au-unit-tiny / 2);
   padding: 0;
   background-color: $au-white;
 

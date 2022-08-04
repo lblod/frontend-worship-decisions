@@ -8,11 +8,12 @@ export default class MockLoginRoute extends Route {
     },
   };
 
+  @service router;
   @service session;
   @service store;
 
   beforeModel() {
-    if (this.session.isAuthenticated) this.transitionTo('index');
+    if (this.session.isAuthenticated) this.router.transitionTo('index');
   }
 
   model(params) {

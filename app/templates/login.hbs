@@ -6,12 +6,12 @@
   <section class="au-o-region-large">
     <div class="au-o-layout au-o-layout--small">
       <AuContent @skin="large">
-        <AuToolbar>
-          <AuToolbarGroup>
+        <AuToolbar as |Group|>
+          <Group>
             <AuHeading @level="1" @skin="1">Publieke Besluitendatabank</AuHeading>
-          </AuToolbarGroup>
+          </Group>
         </AuToolbar>
-        <Acmidm::Login as |acmidm|>
+        <Acmidm::Login role="menu" as |acmidm|>
           <AuButton
             role="menuitem"
             @styles="au-c-button au-c-button--tertiary"
