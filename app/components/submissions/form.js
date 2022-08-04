@@ -3,12 +3,12 @@ import { inject as service } from '@ember/service';
 import Component from '@glimmer/component';
 import { tracked } from '@glimmer/tracking';
 import { ForkingStore } from '@lblod/ember-submission-form-fields';
-import rdflib from 'browser-rdflib';
+import { Namespace, NamedNode } from 'rdflib';
 import { task } from 'ember-concurrency';
 import fetch from 'fetch';
 
-const RDF = new rdflib.Namespace('http://www.w3.org/1999/02/22-rdf-syntax-ns#');
-const FORM = new rdflib.Namespace('http://lblod.data.gift/vocabularies/forms/');
+const RDF = new Namespace('http://www.w3.org/1999/02/22-rdf-syntax-ns#');
+const FORM = new Namespace('http://lblod.data.gift/vocabularies/forms/');
 
 export default class SubmissionsFormComponent extends Component {
   @service store;
@@ -42,12 +42,12 @@ export default class SubmissionsFormComponent extends Component {
 
     const formStore = new ForkingStore();
 
-    const metaGraph = new rdflib.NamedNode('http://data.lblod.info/metagraph');
+    const metaGraph = new NamedNode('http://data.lblod.info/metagraph');
     formStore.parse(meta, metaGraph, 'text/turtle');
-    const formGraph = new rdflib.NamedNode('http://data.lblod.info/form');
+    const formGraph = new NamedNode('http://data.lblod.info/form');
     formStore.parse(form, formGraph, 'text/turtle');
 
-    const sourceGraph = new rdflib.NamedNode(
+    const sourceGraph = new NamedNode(
       `http://data.lblod.info/submission-document/data/${submissionDocument.id}`
     );
     if (removals || additions) {
@@ -65,6 +65,6 @@ export default class SubmissionsFormComponent extends Component {
     this.formStore = formStore;
     this.graphs = { formGraph, sourceGraph, metaGraph };
     this.form = formStore.any(undefined, RDF('type'), FORM('Form'), formGraph);
-    this.sourceNode = new rdflib.NamedNode(submissionDocument.uri);
+    this.sourceNode = new NamedNode(submissionDocument.uri);
   }
 }
