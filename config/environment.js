@@ -37,12 +37,6 @@ module.exports = function (environment) {
         },
       },
     },
-    browserUpdate: {
-      vs: { i: 11, f: -3, o: -3, s: -3, c: -3 },
-      style: 'corner',
-      l: 'nl',
-      shift_page_down: false,
-    },
     // This config can be removed once the auto-startup logic is removed from ember-plausible:
     // https://github.com/redpencilio/ember-plausible/issues/4
     'ember-plausible': {
