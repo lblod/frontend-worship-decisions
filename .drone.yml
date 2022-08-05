@@ -29,6 +29,9 @@ steps:
       repo: lblod/frontend-public-decisions
       dry_run: true
       purge: true
+trigger:
+  event:
+    - pull_request
 ---
 kind: pipeline
 type: docker
