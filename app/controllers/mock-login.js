@@ -1,7 +1,10 @@
 import Controller from '@ember/controller';
+import { inject as service } from '@ember/service';
 import { restartableTask, task, timeout } from 'ember-concurrency';
 
 export default class MockLoginController extends Controller {
+  @service store;
+
   constructor() {
     super(...arguments);
   }

@@ -10,6 +10,7 @@ import { FILTER_FORM_UUID } from '../../../../components/search-queries/filter-f
 
 export default class SearchSubmissionSearchQueriesSelectRoute extends Route {
   @service router;
+  @service store;
 
   async model(params) {
     const store = new ForkingStore();
