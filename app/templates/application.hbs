@@ -7,24 +7,17 @@
   </li>
   <li class="au-c-list-horizontal__item" role="menu">
     {{#if this.session.isAuthenticated}}
-      <AuButton @skin="link" role="menuitem" {{ on "click" this.logout}}>
-        <AuIcon @icon="logout" @alignment="left" /> Afmelden
+      <AuButton
+        @skin="link"
+        @icon="logout"
+        @iconAlignment="left"
+        role="menuitem"
+        {{on "click" this.logout}}
+      >
+        Afmelden
       </AuButton>
     {{else}}
-      <Acmidm::Login role="menu" as |acmidm|>
-        <AuButton
-          role="menuitem"
-          @styles="au-c-button au-c-button--tertiary"
-          @loading={{acmidm.isAuthenticating}}
-          @disabled={{acmidm.isAuthenticating}}
-          {{on "click" acmidm.login}}
-        >
-          Meld u aan
-        </AuButton>
-        {{#if acmidm.errorMessage}}
-          <AuAlert @icon="alert-triangle" @title={{acmidm.errorMessage}} />
-        {{/if}}
-      </Acmidm::Login>
+      <LoginButton @isCompact={{true}} />
     {{/if}}
   </li>
 </AuMainHeader>
