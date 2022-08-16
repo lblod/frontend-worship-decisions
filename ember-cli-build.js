@@ -8,9 +8,6 @@ module.exports = function (defaults) {
     'ember-simple-auth': {
       useSessionSetupMethod: true,
     },
-    'ember-cli-babel': {
-      includePolyfill: true,
-    },
   });
   // Use `app.import` to add additional libraries to the generated
   // output files.
