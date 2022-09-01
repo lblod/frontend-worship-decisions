@@ -13,8 +13,12 @@ export default class ApplicationRoute extends Route {
     return Promise.all([this.startAnalytics(), this.loadCurrentSession()]);
   }
 
-  loadCurrentSession() {
-    return this.currentSession.load().catch(() => this.session.invalidate());
+  async loadCurrentSession() {
+    try {
+      this.currentSession.load();
+    } catch (error) {
+      this.session.invalidate();
+    }
   }
 
   async startAnalytics() {
