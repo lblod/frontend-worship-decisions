@@ -45,7 +45,7 @@
               </td>
               <td class="au-u-visible-from@medium">{{moment-format row.sessionDatetime 'DD-MM-YYYY HH:mm'}}</td>
               <td class="au-u-hide-on-print" style="width:70px;" {{! template-lint-disable no-inline-styles }}>
-                <LinkTo @route="search.submissions.show" @model={{row.id}}>Bekijk</LinkTo>
+                <AuLink @route="search.submissions.show" @model={{row.id}}>Bekijk</AuLink>
               </td>
             </c.body>
             <tr>
