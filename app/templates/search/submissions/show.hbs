@@ -1,18 +1,15 @@
 <div class="au-o-grid__item au-u-1-1 au-u-2-6@medium">
   <div class="au-c-body-container au-c-action-sidebar">
     <AuToolbar @border="bottom" @size="large" @nowrap="true" tabindex="0" as |Group|>
-      <Group>
+      <Group class="au-u-margin-right-large">
         <div>
           <AuHeading @level="2" @skin="3">Melding {{this.model.organization.fullName}}</AuHeading>
         </div>
       </Group>
-      <Group>
-        <div class="au-o-box">
-          <LinkTo @route='search.submissions.index' class="link--icon--close">
-            <span class="au-u-hidden-visually">Venster sluiten</span>
-          </LinkTo>
-        </div>
-      </Group>
+      <LinkTo @route="search.submissions.index" class="au-c-close au-c-close--large">
+        <AuIcon @icon="cross" @size="large" />
+        <span class="au-u-hidden-visually">Venster sluiten</span>
+      </LinkTo>
     </AuToolbar>
     <div class="au-o-box au-c-body-container au-c-body-container--scroll">
       <div class="au-u-margin-bottom">
