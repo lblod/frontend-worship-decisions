@@ -1,0 +1,8 @@
+{
+  "git": {
+    "commitMessage": "Released v${version}"
+  },
+  "npm": {
+    "publish": false
+  }
+}
