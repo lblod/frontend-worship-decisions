@@ -4,21 +4,12 @@ import ENV from 'frontend-public-decisions/config/environment';
 
 export default class ApplicationRoute extends Route {
   @service router;
-  @service currentSession;
   @service session;
   @service plausible;
 
   async beforeModel() {
     await this.session.setup();
-    return Promise.all([this.startAnalytics(), this.loadCurrentSession()]);
-  }
-
-  async loadCurrentSession() {
-    try {
-      this.currentSession.load();
-    } catch (error) {
-      this.session.invalidate();
-    }
+    await this.startAnalytics();
   }
 
   async startAnalytics() {
