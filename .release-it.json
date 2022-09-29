@@ -1,6 +1,6 @@
 {
   "git": {
-    "commitMessage": "Released v${version}"
+    "tagName": "v${version}"
   },
   "npm": {
     "publish": false
