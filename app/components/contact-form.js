@@ -1,5 +1,6 @@
 import Component from '@glimmer/component';
 import { tracked } from '@glimmer/tracking';
+import config from 'frontend-worship-decisions/config/environment';
 
 export default class ContactFormComponent extends Component {
   @tracked selectedOption = null;
@@ -23,7 +24,7 @@ export default class ContactFormComponent extends Component {
     if (this.canSend) {
       let subject = this.selectedOption.subject;
 
-      return `mailto:LoketLokaalBestuur@vlaanderen.be?subject=${subject} - Publieke besluitendatabank`;
+      return `mailto:LoketLokaalBestuur@vlaanderen.be?subject=${subject} - ${config.appName}`;
     } else {
       return '';
     }
