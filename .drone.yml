@@ -26,7 +26,7 @@ steps:
   - name: build-dry-run
     image: plugins/docker
     settings:
-      repo: lblod/frontend-public-decisions
+      repo: lblod/frontend-worship-decisions
       dry_run: true
       purge: true
 trigger:
@@ -40,7 +40,7 @@ steps:
   - name: push-latest-build
     image: plugins/docker
     settings:
-      repo: lblod/frontend-public-decisions
+      repo: lblod/frontend-worship-decisions
       username:
         from_secret: docker_username
       password:
@@ -60,7 +60,7 @@ steps:
   - name: push-tagged-build
     image: plugins/docker
     settings:
-      repo: lblod/frontend-public-decisions
+      repo: lblod/frontend-worship-decisions
       tags: ${DRONE_TAG##v}
       username:
         from_secret: docker_username
@@ -73,11 +73,8 @@ trigger:
 ---
 kind: secret
 name: docker_username
-data: xZslq485H302HoIP3MHO1mW9Mc7xDikPgXBkSGH/pFTMYxAgbAAmdA==
 ---
 kind: secret
 name: docker_password
-data: KuzOThczhYWILRiJlyR/8jNcDhx1FpOgkRRwiDixqlC93X8PT2Eihto+zufbc85Uc0vG3yIRgKxEzZtAH1GSKg==
 ---
 kind: signature
-hmac: 1ae34e51bc3a85b9d894716aab66750fa2664033e841955802b84187737b89b6

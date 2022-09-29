@@ -11,13 +11,13 @@ module.exports = function () {
     'ssh-index': {
       username: 'root',
       host: 'rpio-dev.s.redpencil.io',
-      remoteDir: '/data/app-public-decisions-dev/public-decisions-app',
+      remoteDir: '/data/app-worship-decisions-dev/worship-decisions-app',
       agent: process.env.SSH_AUTH_SOCK,
       port: 22,
       allowOverwrite: true,
     },
     rsync: {
-      dest: '/data/app-public-decisions-dev/public-decisions-app',
+      dest: '/data/app-worship-decisions-dev/worship-decisions-app',
       host: 'root@rpio-dev.s.redpencil.io',
       port: 22,
       delete: false,

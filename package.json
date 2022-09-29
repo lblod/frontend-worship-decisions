@@ -1,11 +1,11 @@
 {
-  "name": "frontend-public-decisions",
-  "version": "1.5.0",
+  "name": "frontend-worship-decisions",
+  "version": "0.1.0",
   "private": true,
-  "description": "Frontend of the Public Decisions application",
+  "description": "Frontend of the Worship Decisions application",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/lblod/frontend-public-decisions.git"
+    "url": "git+https://github.com/lblod/frontend-worship-decisions.git"
   },
   "license": "MIT",
   "author": "info@redpencil.io",

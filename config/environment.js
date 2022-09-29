@@ -2,7 +2,7 @@
 
 module.exports = function (environment) {
   let ENV = {
-    modulePrefix: 'frontend-public-decisions',
+    modulePrefix: 'frontend-worship-decisions',
     environment,
     rootURL: '/',
     locationType: 'auto',
@@ -21,7 +21,7 @@ module.exports = function (environment) {
       // Here you can pass flags/options to your application instance
       // when it is created
     },
-    appName: 'Publieke Besluitendatabank',
+    appName: 'Erediensten Toezichtsdatabank',
     moment: {
       allowEmpty: true,
     },
@@ -32,7 +32,7 @@ module.exports = function (environment) {
         'acmidm-oauth2': {
           apiKey: '{{OAUTH_API_KEY}}',
           baseUrl: '{{OAUTH_BASE_URL}}',
-          scope: 'openid vo profile abb_besluitendatabank',
+          scope: 'openid vo profile abb_toezichtsdatabank',
           redirectUri: '{{OAUTH_REDIRECT_URL}}',
           logoutUrl: '{{OAUTH_LOGOUT_URL}}',
         },
