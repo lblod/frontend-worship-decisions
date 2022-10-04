@@ -9,7 +9,7 @@ export const SEARCH = new Namespace(
 );
 
 export const TEMP_SOURCE_NODE = new NamedNode(
-  'http://frontend-public-decisions/temp-source-node'
+  'http://frontend-worship-decisions/temp-source-node'
 );
 
 export const FORM_GRAPHS = {

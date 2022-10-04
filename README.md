@@ -1,3 +1,3 @@
-# frontend-public-decisions
+# frontend-worship-decisions
 
-Frontend of the Public decisions application
+Frontend of the worship decisions application
