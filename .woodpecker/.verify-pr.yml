@@ -1,0 +1,15 @@
+pipeline:
+  install:
+    image: danlynn/ember-cli:3.28.5
+    commands:
+      - npm install
+  lint:
+    image: danlynn/ember-cli:3.28.5
+    commands:
+      - npm run lint
+  test:
+    image: danlynn/ember-cli:3.28.5
+    commands:
+      - npm run test:ember
+when:
+  event: pull_request
