@@ -1,6 +1,7 @@
 import Controller from '@ember/controller';
 import { inject as service } from '@ember/service';
 import { restartableTask, task, timeout } from 'ember-concurrency';
+import { tracked } from '@glimmer/tracking';
 
 export default class MockLoginController extends Controller {
   @service store;
@@ -10,9 +11,9 @@ export default class MockLoginController extends Controller {
   }
 
   queryParams = ['gemeente', 'page'];
-  gemeente = '';
-  page = 0;
-  size = 10;
+  @tracked gemeente = '';
+  @tracked page = 0;
+  @tracked size = 10;
 
   @task
   *queryStore() {
