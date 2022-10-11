@@ -4,13 +4,8 @@ import { restartableTask, task, timeout } from 'ember-concurrency';
 import { tracked } from '@glimmer/tracking';
 
 export default class MockLoginController extends Controller {
-  @service store;
-
-  constructor() {
-    super(...arguments);
-  }
-
   queryParams = ['gemeente', 'page'];
+  @service store;
   @tracked gemeente = '';
   @tracked page = 0;
   @tracked size = 10;
@@ -33,7 +28,6 @@ export default class MockLoginController extends Controller {
     yield timeout(500);
     this.page = 0;
     this.gemeente = value;
-    const model = yield this.queryStore.perform();
-    this.model = model;
+    this.model = yield this.queryStore.perform();
   }
 }

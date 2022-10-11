@@ -1,15 +1,15 @@
-import { inject as service } from '@ember/service';
 import Route from '@ember/routing/route';
+import { inject as service } from '@ember/service';
 
 export default class MockLoginRoute extends Route {
+  @service session;
+  @service store;
+
   queryParams = {
     page: {
       refreshModel: true,
     },
   };
-
-  @service session;
-  @service store;
 
   beforeModel() {
     this.session.prohibitAuthentication('index');
