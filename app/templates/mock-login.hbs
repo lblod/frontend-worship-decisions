@@ -9,8 +9,8 @@
 
       <AuHeading @skin="4">Kies een bestuurseenheid om mee in te loggen.</AuHeading>
       <p class="au-u-margin-top-small au-u-margin-bottom">
-        <AuLabel>Bestuurseenheid zoeken</AuLabel>
-        <input class="au-c-input au-c-input--block" placeholder="Aalst, Berchem, &hellip;" value={{this.gemeente}} {{on "input" (perform this.updateSearch value='target.value')}} aria-label="Bestuurseenheid zoeken">
+        <AuLabel for="bestuurseenheid-searchbox">Bestuurseenheid zoeken</AuLabel>
+        <input id="bestuurseenheid-searchbox" class="au-c-input au-c-input--block" placeholder="Aalst, Berchem, &hellip;" value={{this.gemeente}} {{on "input" (perform this.updateSearch value='target.value')}}>
       </p>
 
         <MockLogin as |login|>
