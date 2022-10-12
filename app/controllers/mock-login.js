@@ -8,7 +8,7 @@ export default class MockLoginController extends Controller {
   @service store;
   @tracked gemeente = '';
   @tracked page = 0;
-  @tracked size = 10;
+  size = 10;
 
   @task
   *queryStore() {
