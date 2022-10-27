@@ -1,0 +1,35 @@
+<td class="au-u-visible-from@medium">{{@submission.organization.provincie.naam}}</td>
+<td style="max-width: 175px;" {{! template-lint-disable no-inline-styles }}>
+  {{@submission.organization.naam}}
+  {{!-- <p class="au-u-visible-from text-fade">{{@submission.organization.classificatie.label}}</p> --}}
+  <AuHelpText class="au-u-hidden-from@medium">{{@submission.organization.classificatie.label}}</AuHelpText>
+</td>
+<td class="au-u-visible-from@medium">
+  {{@submission.organization.classificatie.label}}
+</td>
+<td style="max-width: 200px;" {{! template-lint-disable no-inline-styles }}>
+  {{#if @submission.formData.decisionType}}
+    <p>{{@submission.formData.decisionType.label}}</p>
+  {{else}}
+    <AuHelpText>Geen type</AuHelpText>
+  {{/if}}
+  <AuHelpText>{{@submission.formData.regulationType.label}}</AuHelpText>
+</td>
+<td class="au-u-visible-from@medium">
+  {{#if @submission.formData.sessionStartedAtTime}}
+    {{moment-format
+      @submission.formData.sessionStartedAtTime
+      "DD-MM-YYYY HH:mm"
+    }}
+  {{/if}}
+</td>
+<td
+  class="au-u-hide-on-print"
+  style="width:70px;"
+  {{! template-lint-disable no-inline-styles }}
+>
+  <AuLink
+    @route="search.submissions.show"
+    @model={{@submission.id}}
+  >Bekijk</AuLink>
+</td>

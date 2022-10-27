@@ -1,0 +1,30 @@
+<td class="au-u-visible-from@medium">{{@submission.province}}</td>
+<td style="max-width: 175px;" {{! template-lint-disable no-inline-styles }}>
+  {{@submission.administrativeUnit}}
+  <p class="text-fade">{{@submission.administrativeUnitClassification}}</p>
+</td>
+<td class="au-u-visible-from@medium">
+  {{@submission.administrativeUnitClassification}}
+</td>
+<td style="max-width: 200px;" {{! template-lint-disable no-inline-styles }}>
+  {{#if @submission.decisionType}}
+    <p>{{@submission.decisionType}}</p>
+  {{else}}
+    <AuHelpText>Geen type</AuHelpText>
+  {{/if}}
+  <AuHelpText>{{@submission.regulationType}}</AuHelpText>
+</td>
+<td class="au-u-visible-from@medium">{{moment-format
+    @submission.sessionDatetime
+    "DD-MM-YYYY HH:mm"
+  }}</td>
+<td
+  class="au-u-hide-on-print"
+  style="width:70px;"
+  {{! template-lint-disable no-inline-styles }}
+>
+  <AuLink
+    @route="search.submissions.show"
+    @model={{@submission.id}}
+  >Bekijk</AuLink>
+</td>

@@ -17,36 +17,18 @@
             @size={{@size}} as |t|>
           <t.content class="au-c-data-table__table--small" as |c|>
             <c.header>
-              <AuDataTableThSortable @label="Provincie" @field="province" @currentSorting={{@sort}} @class="data-table__header-title au-u-visible-from@medium"/>
-              <AuDataTableThSortable @label="Bestuurseenheid" @field="administrativeUnit" @currentSorting={{@sort}} @class="data-table__header-title"/>
-              <AuDataTableThSortable @label="Type bestuur" @field="administrativeUnitClassification" @currentSorting={{@sort}} @class="data-table__header-title au-u-visible-from@medium"/>
-              <AuDataTableThSortable @label="Categorie dossier" @field="decisionType" @currentSorting={{@sort}} @class="data-table__header-title"/>
-              <AuDataTableThSortable @label="Periode zitting / besluit" @field="sessionDatetime" @currentSorting={{@sort}} @class="data-table__header-title au-u-visible-from@medium"/>
-              <th class="au-u-hide-on-print"></th>
+              {{#if @usesMuSearch}}
+                <SearchTable::MuSearch::Header @sort={{@sort}} />
+              {{else}}
+                <SearchTable::Resource::Header @sort={{@sort}} />
+              {{/if}}
             </c.header>
-            <c.body as |row|>
-
-              <td class="au-u-visible-from@medium">{{row.province}}</td>
-
-              <td style="max-width: 175px;" {{! template-lint-disable no-inline-styles }}>
-                {{row.administrativeUnit}}
-                <p class="text-fade">{{row.administrativeUnitClassification}}</p>
-              </td>
-
-              <td class="au-u-visible-from@medium">{{row.administrativeUnitClassification}}</td>
-
-              <td style="max-width: 200px;" {{! template-lint-disable no-inline-styles }}>
-                {{#if row.decisionType}}
-                  <p>{{row.decisionType}}</p>
-                {{else}}
-                  <AuHelpText>Geen type</AuHelpText>
-                {{/if}}
-                <AuHelpText>{{row.regulationType}}</AuHelpText>
-              </td>
-              <td class="au-u-visible-from@medium">{{moment-format row.sessionDatetime 'DD-MM-YYYY HH:mm'}}</td>
-              <td class="au-u-hide-on-print" style="width:70px;" {{! template-lint-disable no-inline-styles }}>
-                <AuLink @route="search.submissions.show" @model={{row.id}}>Bekijk</AuLink>
-              </td>
+            <c.body as |submission|>
+              {{#if @usesMuSearch}}
+                <SearchTable::MuSearch::Row @submission={{submission}} />
+              {{else}}
+                <SearchTable::Resource::Row @submission={{submission}} />
+              {{/if}}
             </c.body>
             <tr>
             <td colspan="8">

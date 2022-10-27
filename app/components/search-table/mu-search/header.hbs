@@ -1,0 +1,31 @@
+<AuDataTableThSortable
+  @label="Provincie"
+  @field="province"
+  @currentSorting={{@sort}}
+  @class="data-table__header-title au-u-visible-from@medium"
+/>
+<AuDataTableThSortable
+  @label="Bestuurseenheid"
+  @field="administrativeUnit"
+  @currentSorting={{@sort}}
+  @class="data-table__header-title"
+/>
+<AuDataTableThSortable
+  @label="Type bestuur"
+  @field="administrativeUnitClassification"
+  @currentSorting={{@sort}}
+  @class="data-table__header-title au-u-visible-from@medium"
+/>
+<AuDataTableThSortable
+  @label="Categorie dossier"
+  @field="decisionType"
+  @currentSorting={{@sort}}
+  @class="data-table__header-title"
+/>
+<AuDataTableThSortable
+  @label="Periode zitting / besluit"
+  @field="sessionDatetime"
+  @currentSorting={{@sort}}
+  @class="data-table__header-title au-u-visible-from@medium"
+/>
+<th class="au-u-hide-on-print"></th>
