@@ -5,8 +5,10 @@ import search from '../../utils/mu-search';
 import Snapshot from '../../utils/snapshot';
 import { tracked } from '@glimmer/tracking';
 import { getQueryParams } from '../../utils/filter-form-helpers';
+import { inject as service } from '@ember/service';
 
 export default class SearchSubmissionsRoute extends Route {
+  @service store;
   @tracked filter;
 
   queryParams;
@@ -19,6 +21,10 @@ export default class SearchSubmissionsRoute extends Route {
     this.queryParams['size'] = options;
     this.queryParams['sort'] = options;
     this.lastParams = new Snapshot();
+
+    // TODO: Check if the user is linked to an organization that should use mu-search instead of mu-cl-resources
+    // For now we default to mu-cl-resources
+    this.shouldUseMuSearch = false;
   }
 
   async model(params) {
@@ -33,6 +39,63 @@ export default class SearchSubmissionsRoute extends Route {
       params.page = 0;
     }
 
+    if (this.shouldUseMuSearch) {
+      return this.muSearch(params);
+    } else {
+      return this.search(params);
+    }
+  }
+
+  async search(params) {
+    const query = {
+      'page[number]': params.page,
+    };
+
+    query.sort = params.sort
+      ? params.sort
+      : '-form-data.session-started-at-time';
+
+    // TODO generate this based on form configuration?
+    if (!isEmpty(params.search)) query[`filter`] = params.search;
+
+    if (params.administrativeUnites)
+      query['filter[organization][:uri:]'] = params.administrativeUnites;
+
+    if (params.administrativeUnitClassifications) {
+      query['filter[organization][classificatie][:uri:]'] =
+        params.administrativeUnitClassifications;
+
+      if (params.governingBodyClassifications)
+        query[
+          'filter[form-data][passed-by][is-tijdsspecialisatie-van][classificatie][:uri:]'
+        ] = params.governingBodyClassifications;
+    }
+
+    if (params.provinces)
+      query['filter[organization][provincie][:uri:]'] = params.provinces;
+
+    if (params.decisionTypes) {
+      query['filter[form-data][decision-type][:uri:]'] = params.decisionTypes;
+
+      if (params.regulationTypes)
+        query['filter[form-data][regulation-type][:uri:]'] =
+          params.regulationTypes;
+    }
+
+    if (params.sessionDateFrom)
+      query['filter[form-data][:gte:session-started-at-time]'] =
+        params.sessionDateFrom;
+
+    if (params.sessionDateTo)
+      query['filter[form-data][:lte:session-started-at-time]'] =
+        params.sessionDateTo;
+
+    this.lastParams.commit();
+
+    return await this.store.query('submission', query);
+  }
+
+  async muSearch(params) {
     const query = {};
     // TODO generate this based on form configuration?
     if (!isEmpty(params.search)) query[`:sqs:data.content`] = params.search;
@@ -86,6 +149,8 @@ export default class SearchSubmissionsRoute extends Route {
 
   setupController(controller) {
     super.setupController(...arguments);
+
+    controller.usesMuSearch = this.shouldUseMuSearch;
 
     if (controller.page !== this.lastParams.committed.page)
       controller.set('page', this.lastParams.committed.page);

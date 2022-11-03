@@ -9,13 +9,16 @@
                 <AuHeading @level="1" @skin="2" class="au-u-margin-top-tiny au-u-margin-bottom-tiny">{{app-name}}</AuHeading>
               </Group>
             </AuToolbar>
-            <Submissions::SearchTable @model={{this.model}}
-                                      @isLoading={{this.isLoadingModel}}
-                                      @queryParams={{this.filter}}
-                                      @sort={{this.sort}}
-                                      @page={{this.page}}
-                                      @size={{this.size}}
-                                      @displaySubset={{this.hasActiveChildRoute}}/>
+            <Submissions::SearchTable
+              @model={{this.model}}
+              @isLoading={{this.isLoadingModel}}
+              @queryParams={{this.filter}}
+              @sort={{this.sort}}
+              @page={{this.page}}
+              @size={{this.size}}
+              @displaySubset={{this.hasActiveChildRoute}}
+              @usesMuSearch={{this.usesMuSearch}}
+            />
           </div>
         </div>
         {{outlet}}
