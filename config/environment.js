@@ -32,7 +32,7 @@ module.exports = function (environment) {
         'acmidm-oauth2': {
           apiKey: '{{OAUTH_API_KEY}}',
           baseUrl: '{{OAUTH_BASE_URL}}',
-          scope: 'openid vo profile abb_toezichtsdatabank',
+          scope: 'openid vo profile abb_databankerediensten',
           redirectUri: '{{OAUTH_REDIRECT_URL}}',
           logoutUrl: '{{OAUTH_LOGOUT_URL}}',
         },
