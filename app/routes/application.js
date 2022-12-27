@@ -1,15 +1,19 @@
 import Route from '@ember/routing/route';
 import { inject as service } from '@ember/service';
+import { warn } from '@ember/debug';
+
 import ENV from 'frontend-worship-decisions/config/environment';
 
 export default class ApplicationRoute extends Route {
   @service router;
   @service session;
+  @service currentSession;
   @service plausible;
 
   async beforeModel() {
     await this.session.setup();
     await this.startAnalytics();
+    return this._loadCurrentSession();
   }
 
   async startAnalytics() {
@@ -24,5 +28,12 @@ export default class ApplicationRoute extends Route {
         apiHost,
       });
     }
+  }
+
+  _loadCurrentSession() {
+    return this.currentSession.load().catch((e) => {
+      warn(e, { id: 'session-load-failure' });
+      this.session.invalidate();
+    });
   }
 }
