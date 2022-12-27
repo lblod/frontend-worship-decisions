@@ -1,5 +1,7 @@
 import Route from '@ember/routing/route';
 import { inject as service } from '@ember/service';
+import { warn } from '@ember/debug';
+
 import ENV from 'frontend-worship-decisions/config/environment';
 
 export default class ApplicationRoute extends Route {
