@@ -5,6 +5,7 @@ import { typeOf } from '@ember/utils';
 
 export default class SearchSubmissionsController extends Controller {
   @service router;
+  @service currentSession;
 
   page = 0;
   size = 20;
