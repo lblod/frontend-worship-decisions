@@ -23,6 +23,14 @@
     }}
   {{/if}}
 </td>
+<td class="au-u-visible-from@medium">
+  {{#if @submission.sentDate}}
+    {{moment-format
+    @submission.sentDate
+    "DD-MM-YYYY HH:mm"
+  }}
+  {{/if}}
+</td>
 <td
   class="au-u-hide-on-print"
   style="width:70px;"
