@@ -2,6 +2,7 @@ import Controller from '@ember/controller';
 import { action } from '@ember/object';
 import { inject as service } from '@ember/service';
 import { typeOf } from '@ember/utils';
+import { tracked } from '@glimmer/tracking';
 
 export default class SearchSubmissionsController extends Controller {
   @service router;
@@ -9,6 +10,8 @@ export default class SearchSubmissionsController extends Controller {
 
   page = 0;
   size = 20;
+
+  @tracked preferences = false;
 
   get hasActiveChildRoute() {
     return (
@@ -30,5 +33,15 @@ export default class SearchSubmissionsController extends Controller {
   @action
   updateQueryParams() {
     this.filter.keys.forEach((key) => (key = this.filter[key]));
+  }
+
+  @action
+  showPreferences() {
+    this.preferences = true;
+  }
+
+  @action
+  hidePreferences() {
+    this.preferences = false;
   }
 }
