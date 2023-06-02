@@ -1,8 +1,33 @@
-<th class="data-table__header-title au-u-visible-from@medium">Provincie</th>
-<th class="data-table__header-title">Bestuurseenheid</th>
-<th class="data-table__header-title au-u-visible-from@medium">Type bestuur</th>
-<th class="data-table__header-title">Categorie dossier</th>
+<AuDataTableThSortable
+  @label="Provincie"
+  @field="organization.provincie.naam"
+  @currentSorting={{@sort}}
+  @class="data-table__header-title au-u-visible-from@medium"
+/>
+<AuDataTableThSortable
+  @label="Bestuurseenheid"
+  @field="organization.naam"
+  @currentSorting={{@sort}}
+  @class="data-table__header-title"
+/>
+<AuDataTableThSortable
+  @label="Type bestuur"
+  @field="organization.classificatie.label"
+  @currentSorting={{@sort}}
+  @class="data-table__header-title au-u-visible-from@medium"
+/>
+<AuDataTableThSortable
+  @label="Categorie dossier"
+  @field="formData.decisionType"
+  @currentSorting={{@sort}}
+  @class="data-table__header-title"
+/>
 <th class="data-table__header-title au-u-visible-from@medium">Periode zitting /
   besluit</th>
-<th class="data-table__header-title au-u-visible-from@medium">Datum verstuurd</th>
+<AuDataTableThSortable
+  @label="Datum verstuurd"
+  @field="sentDate"
+  @currentSorting={{@sort}}
+  @class="data-table__header-title au-u-visible-from@medium"
+/>
 <th class="au-u-hide-on-print"></th>
