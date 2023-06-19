@@ -10,6 +10,12 @@
                   Inzendingen beschikbaar voor {{this.currentSession.groupName}}
                 </AuHeading>
               </Group>
+              <Group>
+                <button type="button" class="au-c-button au-c-button--tertiary" {{on 'click' this.showPreferences}}>
+                  <AuIcon @icon="settings" @alignment="left" />
+                  Ontvang mails bij nieuwe inzendingen
+                </button>
+              </Group>
             </AuToolbar>
             <Submissions::SearchTable
               @model={{this.model}}
@@ -25,6 +31,11 @@
         </div>
         {{outlet}}
       </div>
+        {{#if this.preferences}}
+        <Submissions::NotificationPreferences
+          @close={{this.hidePreferences}}
+        />
+        {{/if}}
     </div>
   </div>
 </div>
