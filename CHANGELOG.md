@@ -1,5 +1,9 @@
 # Changelog
 
+## 0.7.0 (2023-06-19)
+
+- Adding mailing notification feature
+
 ## 0.6.0 (2023-03-24)
 
 - Adding "Datum verstuurd" columns and rows in the header component to display the sent date from a submission.
