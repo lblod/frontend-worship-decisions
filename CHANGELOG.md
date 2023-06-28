@@ -1,5 +1,9 @@
 # Changelog
 
+## 0.8.0 (2023-06-28)
+
+- updating `ember-submission-form-fields` to v2.11.0 (Internal)
+
 ## 0.7.0 (2023-06-19)
 
 - Adding mailing notification feature
