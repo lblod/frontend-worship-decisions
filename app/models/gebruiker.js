@@ -23,7 +23,7 @@ export default class Gebruiker extends Model {
   searchQueries;
 
   get group() {
-    return this.bestuurseenheden.firstObject;
+    return this.hasMany('bestuurseenheden').value()[0];
   }
 
   get fullName() {
