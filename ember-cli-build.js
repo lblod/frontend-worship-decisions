@@ -9,6 +9,9 @@ module.exports = function (defaults) {
     'ember-simple-auth': {
       useSessionSetupMethod: true,
     },
+    '@appuniversum/ember-appuniversum': {
+      disableWormholeElement: true,
+    },
     autoImport: {
       webpack: {
         plugins: new webpack.IgnorePlugin({
