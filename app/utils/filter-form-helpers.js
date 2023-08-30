@@ -96,6 +96,7 @@ export function getQueryParams(options) {
     provinces: options,
     decisionTypes: options,
     regulationTypes: options,
+    sessionDateTime: options,
     sessionDateFrom: options,
     sessionDateTo: options,
     sentDateFrom: options,
