@@ -87,7 +87,7 @@ export default class SearchSubmissionsRoute extends Route {
       const formattedDate = sessionDate.toISOString().split('T')[0];
       query['filter[form-data][session-started-at-time]'] = formattedDate;
     }
-    
+
     if (params.sessionDateFrom)
       query['filter[form-data][:gte:session-started-at-time]'] =
         params.sessionDateFrom;
@@ -128,7 +128,6 @@ export default class SearchSubmissionsRoute extends Route {
       const formattedDate = sessionDate.toISOString().split('T')[0];
       query['sessionDatetime'] = formattedDate;
     }
-    
     if (params.sessionDateFrom)
       query[':gte:sessionDatetime'] = params.sessionDateFrom;
     if (params.sessionDateTo)
