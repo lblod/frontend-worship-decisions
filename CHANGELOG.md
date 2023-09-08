@@ -1,5 +1,9 @@
 # Changelog
 
+## 0.9.0 (2023-09-08)
+
+- Adding new filtering field (allow filter from specific date)
+
 ## 0.8.0 (2023-06-28)
 
 - updating `ember-submission-form-fields` to v2.11.0 (Internal)
