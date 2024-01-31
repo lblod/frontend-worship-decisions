@@ -12,7 +12,7 @@ module('Integration | Helper | app-name', function (hooks) {
 
     config.appName = 'foo';
 
-    await render(hbs`{{app-name}}`);
+    await render(hbs`{{(app-name)}}`);
     assert.dom().hasText('foo');
 
     config.appName = currentAppName;
