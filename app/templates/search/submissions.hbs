@@ -11,10 +11,9 @@
                 </AuHeading>
               </Group>
               <Group>
-                <button type="button" class="au-c-button au-c-button--tertiary" {{on 'click' this.showPreferences}}>
-                  <AuIcon @icon="settings" @alignment="left" />
+                <AuButton @skin="link" @icon="settings" {{on 'click' this.showPreferences}}>
                   Ontvang mails bij nieuwe inzendingen
-                </button>
+                </AuButton>
               </Group>
             </AuToolbar>
             <Submissions::SearchTable
