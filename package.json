@@ -29,6 +29,7 @@
     "test:ember": "ember test"
   },
   "overrides": {
+    "@babel/eslint-parser": "$@babel/eslint-parser",
     "@embroider/macros": "^1.0.0",
     "ember-style-modifier": "^0.8.0",
     "torii": "1.0.0-beta.1",
@@ -37,12 +38,13 @@
     }
   },
   "overridesNotes": {
+    "@babel/eslint-parser": "There is a bug in the 7.23.9 release that causes false positive linting errors. Unpin and remove the override once the fix is released. https://github.com/babel/babel/issues/16239",
     "torii": "torii is used by ember-acmidm-login but v1.0.0-beta fixes some Ember 4 issues",
     "readable-stream": "it accidentally required node's stream in the most recent release: https://github.com/nodejs/readable-stream/issues/516"
   },
   "devDependencies": {
     "@appuniversum/ember-appuniversum": "^2.3.0",
-    "@babel/eslint-parser": "^7.21.3",
+    "@babel/eslint-parser": "7.23.3",
     "@babel/plugin-proposal-decorators": "^7.21.0",
     "@ember/optional-features": "^2.0.0",
     "@ember/render-modifiers": "^2.0.4",
