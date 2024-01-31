@@ -2,29 +2,30 @@
    # Worship decisions
    ================================== */
 
+
 // SETTINGS
-@import "ember-appuniversum/a-settings";
+@import "@appuniversum/ember-appuniversum/styles/a-settings";
 
 // TOOLS
-@import "ember-appuniversum/a-tools";
+@import "@appuniversum/ember-appuniversum/styles/a-tools";
 
 // GENERIC
-@import "ember-appuniversum/a-generic";
+@import "@appuniversum/ember-appuniversum/styles/a-generic";
 
 // ELEMENTS
-@import "ember-appuniversum/a-elements";
+@import "@appuniversum/ember-appuniversum/styles/a-elements";
 
 // OBJECTS
-@import "ember-appuniversum/a-objects";
+@import "@appuniversum/ember-appuniversum/styles/a-objects";
 
 // COMPONENTS
-@import "ember-appuniversum/a-components";
+@import "@appuniversum/ember-appuniversum/styles/a-components";
 
 // PLUGINS
-@import "ember-appuniversum/a-plugins";
+@import "@appuniversum/ember-appuniversum/styles/a-plugins";
 
 // UTILITIES
-@import "ember-appuniversum/a-utilities";
+@import "@appuniversum/ember-appuniversum/styles/a-utilities";
 
 // TEMPORARY HACKS AND QUICKFIXES
 @import 'shame';
