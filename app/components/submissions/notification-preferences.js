@@ -10,6 +10,11 @@ export default class NotificationPreferencesComponent extends Component {
   @tracked emailAddress = this.currentSession.group.mailAdres;
 
   @action
+  handleEmailChange(event) {
+    this.emailAddress = event.target.value.trim();
+  }
+
+  @action
   savePreferences(event) {
     event.preventDefault();
 
