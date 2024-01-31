@@ -6,12 +6,24 @@ export default class Gebruiker extends Model {
   @attr() voornaam;
   @attr() achternaam;
 
-  @hasMany('account', { inverse: null }) account;
-  @hasMany('bestuurseenheid') bestuurseenheden;
-  @hasMany('search-query') searchQueries;
+  @hasMany('account', {
+    async: true,
+    inverse: null,
+  })
+  account;
+  @hasMany('bestuurseenheid', {
+    async: true,
+    inverse: null,
+  })
+  bestuurseenheden;
+  @hasMany('search-query', {
+    async: true,
+    inverse: null,
+  })
+  searchQueries;
 
   get group() {
-    return this.bestuurseenheden.firstObject;
+    return this.hasMany('bestuurseenheden').value()[0];
   }
 
   get fullName() {

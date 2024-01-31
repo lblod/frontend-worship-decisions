@@ -18,8 +18,24 @@ export default class Submission extends Model {
   @attr source;
   @attr uri;
   @attr href;
-  @belongsTo('form-data') formData;
-  @belongsTo('bestuurseenheid') organization;
-  @belongsTo('submission-document') submissionDocument;
-  @hasMany('file') files;
+  @belongsTo('form-data', {
+    async: true,
+    inverse: null,
+  })
+  formData;
+  @belongsTo('bestuurseenheid', {
+    async: true,
+    inverse: null,
+  })
+  organization;
+  @belongsTo('submission-document', {
+    async: true,
+    inverse: null,
+  })
+  submissionDocument;
+  @hasMany('file', {
+    async: true,
+    inverse: null,
+  })
+  files;
 }

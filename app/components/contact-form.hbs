@@ -4,15 +4,18 @@
       Waar gaat uw bericht over?
     </f.legend>
     <f.content>
-      {{#each this.subjectOptions as |option|}}
-        <AuControlRadio
-          @label={{option.label}}
-          @name="message-subject"
-          @value={{option.subject}}
-          @onChange={{fn (mut this.selectedOption) option}}
-          @checked={{eq option.subject this.selectedOption.subject}}
-        />
-      {{/each}}
+      <AuRadioGroup as |Group|>
+        {{#each this.subjectOptions as |option|}}
+          <Group.Radio
+            @name="message-subject"
+            @value={{option.subject}}
+            @onChange={{fn (mut this.selectedOption) option}}
+            @checked={{eq option.subject this.selectedOption.subject}}
+          >
+            {{option.label}}
+          </Group.Radio>
+        {{/each}}
+      </AuRadioGroup>
     </f.content>
   </AuFieldset>
 

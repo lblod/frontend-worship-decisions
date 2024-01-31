@@ -11,5 +11,9 @@ export default class SearchQueryModel extends Model {
   })
   created;
 
-  @belongsTo('gebruiker', { inverse: null }) user;
+  @belongsTo('gebruiker', {
+    async: true,
+    inverse: null,
+  })
+  user;
 }

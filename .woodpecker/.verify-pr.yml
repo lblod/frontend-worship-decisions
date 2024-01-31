@@ -1,14 +1,14 @@
 pipeline:
   install:
-    image: danlynn/ember-cli:4.4.0
+    image: danlynn/ember-cli:5.3.0-node_18.18
     commands:
       - npm install
   lint:
-    image: danlynn/ember-cli:4.4.0
+    image: danlynn/ember-cli:5.3.0-node_18.18
     commands:
       - npm run lint
   test:
-    image: danlynn/ember-cli:4.4.0
+    image: danlynn/ember-cli:5.3.0-node_18.18
     commands:
       - npm run test:ember
 when:
