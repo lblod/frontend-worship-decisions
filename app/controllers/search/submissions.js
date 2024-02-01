@@ -10,7 +10,7 @@ export default class SearchSubmissionsController extends Controller {
 
   page = 0;
   size = 20;
-  sort = 'organization.naam'; // Note : this is a temporary fix, clicking on the sorting will still make submissions disappear but now they're shown by default.
+  sort = '-sent-date';
 
   @tracked preferences = false;
 
