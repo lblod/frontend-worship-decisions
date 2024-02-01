@@ -5,7 +5,6 @@ import { tracked } from '@glimmer/tracking';
 import { ForkingStore } from '@lblod/ember-submission-form-fields';
 import { Namespace, NamedNode } from 'rdflib';
 import { task } from 'ember-concurrency';
-import fetch from 'fetch';
 
 const RDF = new Namespace('http://www.w3.org/1999/02/22-rdf-syntax-ns#');
 const FORM = new Namespace('http://lblod.data.gift/vocabularies/forms/');
