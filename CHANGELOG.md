@@ -1,5 +1,13 @@
 # Changelog
 
+## 0.10.0 (2024-02-07)
+
+#### :rocket: Enhancement
+* [#15](https://github.com/lblod/frontend-worship-decisions/pull/15) [DL-5637] Sort submissions by sent date ([@Windvis](https://github.com/Windvis))
+
+#### :bug: Bug Fix
+* [#13](https://github.com/lblod/frontend-worship-decisions/pull/13) Fix filter footer alignment ([@wolfderechter](https://github.com/wolfderechter))
+
 ## 0.9.0 (2023-09-08)
 
 - Adding new filtering field (allow filter from specific date)
