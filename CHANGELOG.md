@@ -1,5 +1,10 @@
 # Changelog
 
+## 0.10.1 (2024-02-08)
+
+#### :bug: Bug Fix
+* [#18](https://github.com/lblod/frontend-worship-decisions/pull/18) [DL-5661] Fix the ACM/IDM login ([@Windvis](https://github.com/Windvis))
+
 ## 0.10.0 (2024-02-07)
 
 #### :rocket: Enhancement
