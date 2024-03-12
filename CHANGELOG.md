@@ -1,5 +1,10 @@
 # Changelog
 
+## 0.11.0 (2024-03-12)
+
+#### :rocket: Enhancement
+* [#21](https://github.com/lblod/frontend-worship-decisions/pull/21) [DL-5735] Enable the 'bulk download' feature for the files and remote-url fields ([@Windvis](https://github.com/Windvis))
+
 ## 0.10.1 (2024-02-08)
 
 #### :bug: Bug Fix
