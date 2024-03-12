@@ -3,8 +3,8 @@ FROM madnificent/ember:4.12.1 as builder
 LABEL maintainer="info@redpencil.io"
 
 WORKDIR /app
-COPY package.json .
-RUN npm install
+COPY package.json package-lock.json ./
+RUN npm ci
 COPY . .
 RUN ember build -prod
 
