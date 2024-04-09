@@ -29,4 +29,5 @@ Router.map(function () {
 
   this.route('mock-login');
   this.route('help');
+  this.route('impersonate');
 });
