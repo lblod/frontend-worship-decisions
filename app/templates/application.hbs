@@ -6,6 +6,11 @@
         Help
       </AuLink>
     </li>
+    {{#if this.currentSession.isAdmin}}
+      <li class="au-c-list-horizontal__item">
+        <ImpersonationMenu />
+      </li>
+    {{/if}}
     <li class="au-c-list-horizontal__item" role="menu">
       {{#if this.session.isAuthenticated}}
         <AuButton
