@@ -8,6 +8,7 @@ import { SwitchIcon } from '@appuniversum/ember-appuniversum/components/icons/sw
 import { UserIcon } from '@appuniversum/ember-appuniversum/components/icons/user';
 
 export default class ImpersonationMenu extends Component {
+  @service currentSession;
   @service impersonation;
 
   LogoutIcon = LogoutIcon;
@@ -28,13 +29,10 @@ export default class ImpersonationMenu extends Component {
       return null;
     }
 
-    return this.impersonation.impersonatedAccount
-      .belongsTo('gebruiker')
-      .value();
+    return this.currentSession.user;
   }
 
   get adminLabel() {
-    // return 'Admin';
     return this.isImpersonating ? `Admin: ${this.user.fullName}` : 'Admin';
   }
 

@@ -9,22 +9,11 @@ export default class CurrentSessionService extends Service {
   @service session;
   @service store;
 
-  @tracked _account;
+  @tracked account;
   @tracked _roles = [];
 
-  get account() {
-    if (this.impersonation.isImpersonating) {
-      return this.impersonation.impersonatedAccount;
-    } else {
-      return this._account;
-    }
-  }
   get user() {
     return this.account.belongsTo('gebruiker').value();
-  }
-
-  get group() {
-    return this.user.group;
   }
 
   get groupClassification() {
@@ -33,17 +22,24 @@ export default class CurrentSessionService extends Service {
 
   async load() {
     if (this.session.isAuthenticated) {
+      await this.impersonation.load();
       let accountId =
         this.session.data.authenticated.relationships.account.data.id;
 
-      this._account = await this.store.findRecord('account', accountId, {
+      this.account = await this.store.findRecord('account', accountId, {
         include: 'gebruiker.bestuurseenheden.classificatie',
       });
-      this._roles = this.session.data.authenticated.data.attributes.roles;
 
-      if (this.isAdmin) {
-        await this.impersonation.load();
-      }
+      // We need to do an extra API call here because ACM/IDM users don't seem to have a "bestuurseenheden" relationship in the DB.
+      // By fetching the record directly we bypass that issue
+      const groupId =
+        this.session.data.authenticated.relationships.group.data.id;
+      this.group = await this.store.findRecord('bestuurseenheid', groupId, {
+        include: 'classificatie',
+        reload: true,
+      });
+
+      this._roles = this.session.data.authenticated.data.attributes.roles;
     }
   }
 
@@ -71,6 +67,10 @@ export default class CurrentSessionService extends Service {
   }
 
   get isAdmin() {
-    return this._roles.includes(ADMIN_ROLE);
+    let roles = this._roles;
+    if (this.impersonation.isImpersonating) {
+      roles = this.impersonation.originalRoles || [];
+    }
+    return roles.includes(ADMIN_ROLE);
   }
 }
