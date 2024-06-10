@@ -106,7 +106,7 @@ export function getQueryParams(options) {
     dateNoLongerInForceFrom: options,
     dateNoLongerInForceTo: options,
     status: options,
-    governingBodyClassifications: options,
+    typeEredienst: options,
     taxType: options,
   };
 }

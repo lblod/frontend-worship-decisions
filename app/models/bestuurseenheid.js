@@ -26,6 +26,12 @@ export default class Bestuurseenheid extends Model {
     inverse: null,
   })
   bestuursorganen;
+  @belongsTo('recognized-worship-type', {
+    async: true,
+    inverse: null,
+    optional: true,
+  })
+  recognizedWorshipType;
 
   get fullName() {
     return `${this.classificatie.get('label')} ${this.naam}`.trim();

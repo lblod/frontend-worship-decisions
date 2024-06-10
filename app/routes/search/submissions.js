@@ -65,10 +65,11 @@ export default class SearchSubmissionsRoute extends Route {
       query['filter[organization][classificatie][:uri:]'] =
         params.administrativeUnitClassifications;
 
-      if (params.governingBodyClassifications)
+      if (params.typeEredienst) {
         query[
-          'filter[form-data][passed-by][is-tijdsspecialisatie-van][classificatie][:uri:]'
-        ] = params.governingBodyClassifications;
+          'filter[organization][recognized-worship-type][:uri:]'
+        ] = params.typeEredienst;
+      }
     }
 
     if (params.provinces)
@@ -110,9 +111,9 @@ export default class SearchSubmissionsRoute extends Route {
     if (params.administrativeUnitClassifications) {
       query[':terms:administrativeUnitClassificationURI'] =
         params.administrativeUnitClassifications;
-      if (params.governingBodyClassifications)
-        query[':terms:governingBodyClassificationURI'] =
-          params.governingBodyClassifications;
+      if (params.typeEredienst)
+        query[':terms:typeEredienstURI'] =
+          params.typeEredienst;
     }
     if (params.chartOfAccounts)
       query[':terms:chartOfAccountURI'] = params.chartOfAccounts;
