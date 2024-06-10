@@ -66,9 +66,8 @@ export default class SearchSubmissionsRoute extends Route {
         params.administrativeUnitClassifications;
 
       if (params.typeEredienst) {
-        query[
-          'filter[organization][recognized-worship-type][:uri:]'
-        ] = params.typeEredienst;
+        query['filter[organization][recognized-worship-type][:uri:]'] =
+          params.typeEredienst;
       }
     }
 
@@ -112,8 +111,7 @@ export default class SearchSubmissionsRoute extends Route {
       query[':terms:administrativeUnitClassificationURI'] =
         params.administrativeUnitClassifications;
       if (params.typeEredienst)
-        query[':terms:typeEredienstURI'] =
-          params.typeEredienst;
+        query[':terms:typeEredienstURI'] = params.typeEredienst;
     }
     if (params.chartOfAccounts)
       query[':terms:chartOfAccountURI'] = params.chartOfAccounts;
