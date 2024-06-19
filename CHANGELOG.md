@@ -1,5 +1,10 @@
 # Changelog
 
+## 0.12.0 (2024-06-19)
+
+#### :rocket: Enhancement
+* [#23](https://github.com/lblod/frontend-worship-decisions/pull/23) [DL-5330] [filter-form] Replace `Type bestuursorgaan` filter for `Type eredienst` ([@Poltergeistz](https://github.com/Poltergeistz))
+
 ## 0.11.0 (2024-03-12)
 
 #### :rocket: Enhancement
