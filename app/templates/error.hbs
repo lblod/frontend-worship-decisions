@@ -1,0 +1,17 @@
+{{#if this.isNotFoundError}}
+  <Error::RouteNotFound />
+{{else}}
+  <ErrorLayout>
+    <:title>Er ging iets fout</:title>
+    <:content>
+      <p>
+        Indien dit probleem zich blijft voordoen, contacteer
+        <AuLinkExternal
+          href="mailto:LoketLokaalBestuur@vlaanderen.be?subject=Technisch probleem in Erediensten Toezichtsdatabank"
+        >
+          LoketLokaalBestuur@vlaanderen.be
+        </AuLinkExternal>.
+      </p>
+    </:content>
+  </ErrorLayout>
+{{/if}}

@@ -4,10 +4,6 @@
    Some parts will be reused, but most of them will not.
    ========================================================================== */
 
-/* ==========================================================================
-  Utilities
- ========================================================================== */
-
 // Fix ACMIDM login alerts/loading in header
 // https://github.com/appuniversum/ember-appuniversum/issues/142
 .au-c-main-header__actions .au-c-alert {
@@ -80,4 +76,25 @@
 .au-c-close--large {
   top: $au-unit;
   right: $au-unit;
+}
+
+/* ==========================================================================
+  Utilities
+ ========================================================================== */
+
+// Appuniversum doesn't generate responsive versions of the base flex util yet
+@include mq(medium) {
+  .au-u-flex\@medium {
+    display: flex;
+  }
+}
+
+// Appuniversum incorrectly defines this as "flex-direction: row"
+.au-u-flex--row-reverse {
+  flex-direction: row-reverse !important;
+}
+
+// Appuniversum doesn't have a generic full height util yet
+.u-h-full {
+  height: 100% !important;
 }
