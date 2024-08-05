@@ -38,8 +38,8 @@ export default class SessionService extends BaseSessionService {
 }
 
 // This converts a RouteInfo instance to the corresponding url by collecting all
-// the route params and query params and using the router.urlFor method
-// This is a public API reimplementation of the `transition.intent.url` property
+// the route params and query params and using the router.urlFor method.
+// This is a public API reimplementation of the `transition.intent.url` property.
 // More info: https://discord.com/channels/480462759797063690/624403666585124895/897832626616926218
 function routeInfoUrl(routeInfo, routerService) {
   let targetRoute = routeInfo.name;
