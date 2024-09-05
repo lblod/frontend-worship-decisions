@@ -1,5 +1,12 @@
 # Changelog
 
+## 0.13.0 (2024-09-05)
+
+#### :rocket: Enhancement
+* [#24](https://github.com/lblod/frontend-worship-decisions/pull/24) [DL-6072] Retry accessing the original route after login ([@Windvis](https://github.com/Windvis))
+* [#25](https://github.com/lblod/frontend-worship-decisions/pull/25) [DL-6071] Add a generic error and 404 page ([@Windvis](https://github.com/Windvis))
+* [#26](https://github.com/lblod/frontend-worship-decisions/pull/26) [DL-4983] Rename app to Databank Erediensten and adjust home page text ([@Riadabd](https://github.com/Riadabd))
+
 ## 0.12.0 (2024-06-19)
 
 #### :rocket: Enhancement
