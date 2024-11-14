@@ -165,15 +165,17 @@ class DecisionDocumentsField extends Component {
       {{@field.label}}
     </AuLabel>
 
-    <AuHelpText @skin="secondary" class="au-u-margin-bottom-small">
-      <AuIcon @icon={{InfoCircleIcon}} />
-      Voor een vlotte raadpleging van de gerefereerde documenten, raden we aan
-      om eerst aan te loggen op
-      <AuLinkExternal
-        @skin="secondary"
-        href={{(worshipDecisionsDatabaseUrl)}}
-      >Databank Erediensten</AuLinkExternal>
-    </AuHelpText>
+    {{!--
+      <AuHelpText @skin="secondary" class="au-u-margin-bottom-small">
+        <AuIcon @icon={{InfoCircleIcon}} />
+        Voor een vlotte raadpleging van de gerefereerde documenten, raden we aan
+        om eerst aan te loggen op
+        <AuLinkExternal
+          @skin="secondary"
+          href={{(worshipDecisionsDatabaseUrl)}}
+        >Databank Erediensten</AuLinkExternal>
+      </AuHelpText>
+    --}}
 
     <div>
       {{#if this.loadDocuments.isIdle}}
