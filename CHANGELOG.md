@@ -1,5 +1,10 @@
 # Changelog
 
+## 0.14.0 (2024-11-25)
+
+#### :rocket: Enhancement
+* [#24](https://github.com/lblod/frontend-worship-decisions/pull/27) [DL-6307] Import form fields for cross referencing ([@claire-lovisa](https://github.com/claire-lovisa))
+
 ## 0.13.0 (2024-09-05)
 
 #### :rocket: Enhancement
