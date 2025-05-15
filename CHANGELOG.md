@@ -1,5 +1,10 @@
 # Changelog
 
+## 0.15.0 (2025-05-15)
+
+#### :rocket: Enhancement
+* [#22](https://github.com/lblod/frontend-worship-decisions/pull/22) [DL-5847] Allow admin users to impersonate other accounts ([@Windvis](https://github.com/Windvis))
+
 ## 0.14.0 (2024-11-25)
 
 #### :rocket: Enhancement
