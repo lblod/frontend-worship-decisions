@@ -1,5 +1,10 @@
 # Changelog
 
+## 0.15.1 (2025-05-26)
+
+#### :rocket: Enhancement
+* [#29](https://github.com/lblod/frontend-worship-decisions/pull/29) [DL-6294] Show 'niet van toepassing' when there is no date ([@wolfderechter](https://github.com/wolfderechter))
+
 ## 0.15.0 (2025-05-15)
 
 #### :rocket: Enhancement
