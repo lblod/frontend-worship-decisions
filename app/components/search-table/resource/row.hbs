@@ -1,8 +1,12 @@
-<td class="au-u-visible-from@medium">{{@submission.organization.provincie.naam}}</td>
+<td
+  class="au-u-visible-from@medium"
+>{{@submission.organization.provincie.naam}}</td>
 <td style="max-width: 175px;" {{! template-lint-disable no-inline-styles }}>
   {{@submission.organization.naam}}
   {{!-- <p class="au-u-visible-from text-fade">{{@submission.organization.classificatie.label}}</p> --}}
-  <AuHelpText class="au-u-hidden-from@medium">{{@submission.organization.classificatie.label}}</AuHelpText>
+  <AuHelpText
+    class="au-u-hidden-from@medium"
+  >{{@submission.organization.classificatie.label}}</AuHelpText>
 </td>
 <td class="au-u-visible-from@medium">
   {{@submission.organization.classificatie.label}}
@@ -21,14 +25,13 @@
       @submission.formData.sessionStartedAtTime
       "DD-MM-YYYY HH:mm"
     }}
+  {{else}}
+    <span class="au-u-muted grey au-u-italic">Niet van toepassing</span>
   {{/if}}
 </td>
 <td class="au-u-visible-from@medium">
   {{#if @submission.sentDate}}
-    {{moment-format
-    @submission.sentDate
-    "DD-MM-YYYY HH:mm"
-  }}
+    {{moment-format @submission.sentDate "DD-MM-YYYY HH:mm"}}
   {{/if}}
 </td>
 <td
