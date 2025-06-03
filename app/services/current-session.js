@@ -2,7 +2,7 @@ import Service from '@ember/service';
 import { inject as service } from '@ember/service';
 import { tracked } from '@glimmer/tracking';
 
-const ADMIN_ROLE = 'LoketLB-admin';
+const ADMIN_ROLE = 'LoketLB-AdminDatabankErediensten';
 
 export default class CurrentSessionService extends Service {
   @service impersonation;
