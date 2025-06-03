@@ -1,5 +1,10 @@
 # Changelog
 
+## 0.15.2 (2025-06-03)
+
+#### :bug: Bug Fix
+* [#30](https://github.com/lblod/frontend-worship-decisions/pull/30) Update the admin role ([@Windvis](https://github.com/Windvis))
+
 ## 0.15.1 (2025-05-26)
 
 #### :rocket: Enhancement
