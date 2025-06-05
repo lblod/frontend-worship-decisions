@@ -1,5 +1,10 @@
 # Changelog
 
+## 0.15.3 (2025-06-05)
+
+#### :rocket: Enhancement
+* [#31](https://github.com/lblod/frontend-worship-decisions/pull/31) [DL-5635]: update privacy policy disclaimer ([@wolfderechter](https://github.com/wolfderechter))
+
 ## 0.15.2 (2025-06-03)
 
 #### :bug: Bug Fix
