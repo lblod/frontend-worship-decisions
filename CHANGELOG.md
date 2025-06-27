@@ -1,5 +1,10 @@
 # Changelog
 
+## 0.15.4 (2025-06-27)
+
+#### :rocket: Enhancement
+* [#32](https://github.com/lblod/frontend-worship-decisions/pull/32) [DL-6665]: fix the broken decisionTypes multiSelect ([@wolfderechter](https://github.com/wolfderechter))
+
 ## 0.15.3 (2025-06-05)
 
 #### :rocket: Enhancement
