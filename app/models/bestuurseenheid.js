@@ -16,6 +16,13 @@ export default class Bestuurseenheid extends Model {
     inverse: null,
   })
   provincie;
+
+  @belongsTo('site', {
+    async: true,
+    inverse: null
+  }) primarySite;
+
+
   @belongsTo('bestuurseenheid-classificatie-code', {
     async: true,
     inverse: null,
