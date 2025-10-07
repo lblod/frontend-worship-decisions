@@ -1,5 +1,9 @@
 # Changelog
 
+## 0.15.5 (2025-10-06)
+#### :rocket: Enhancement
+* [#33](https://github.com/lblod/frontend-worship-decisions/pull/33) [DL-6804]: app-worship-decisions-database: ensure it works with updated province data model ([@palexopoulos-triply](https://github.com/palexopoulos-triply))
+
 ## 0.15.4 (2025-06-27)
 
 #### :rocket: Enhancement
