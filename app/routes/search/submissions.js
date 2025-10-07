@@ -72,7 +72,8 @@ export default class SearchSubmissionsRoute extends Route {
     }
 
     if (params.provinces)
-      query['filter[organization][provincie][:uri:]'] = params.provinces;
+      query['filter[organization][primary-site][address][provincie][:uri:]'] =
+        params.provinces;
 
     if (params.decisionTypes) {
       const decisionTypesUriList = params.decisionTypes.split(',');

@@ -40,3 +40,5 @@ inflector.irregular('form-data', 'form-data');
 inflector.irregular('concept', 'concepts');
 inflector.irregular('concept-scheme', 'concept-schemes');
 inflector.irregular('search-query', 'search-queries');
+inflector.irregular('address', 'adressen');
+inflector.irregular('site', 'vestigingen');
