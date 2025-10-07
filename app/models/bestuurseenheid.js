@@ -19,9 +19,9 @@ export default class Bestuurseenheid extends Model {
 
   @belongsTo('site', {
     async: true,
-    inverse: null
-  }) primarySite;
-
+    inverse: null,
+  })
+  primarySite;
 
   @belongsTo('bestuurseenheid-classificatie-code', {
     async: true,
