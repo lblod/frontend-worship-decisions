@@ -1,5 +1,9 @@
 # Changelog
 
+## 0.15.6 (2025-11-07)
+#### :rocket: Enhancement
+* [#34](https://github.com/lblod/frontend-worship-decisions/pull/34) [DL-6994]: Show sent date in the form ([@wolfderechter](https://github.com/wolfderechter))
+
 ## 0.15.5 (2025-10-06)
 #### :rocket: Enhancement
 * [#33](https://github.com/lblod/frontend-worship-decisions/pull/33) [DL-6804]: app-worship-decisions-database: ensure it works with updated province data model ([@palexopoulos-triply](https://github.com/palexopoulos-triply))
