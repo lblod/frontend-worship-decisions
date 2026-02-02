@@ -20,6 +20,9 @@ import { formatDate } from 'frontend-worship-decisions/utils/date';
 import { isRequiredField } from 'frontend-worship-decisions/utils/semantic-forms';
 import { AddDocumentsModal } from './-shared/add-documents-modal';
 import { extractDocumentsFromTtl } from './-shared/utils';
+import { NamedNode } from 'rdflib';
+import { SKOS } from '../../../rdf/namespaces';
+import { DECISION_TYPE } from '../../../models/concept-scheme';
 
 export function registerFormField() {
   registerFormFields([
@@ -61,12 +64,23 @@ class DecisionDocumentsField extends Component {
   }
 
   get decisionType() {
-    return this.args.formStore.any(
+    const rdfTypes = this.args.formStore.match(
       this.args.sourceNode,
       RDF('type'),
       undefined,
       this.args.graphs.sourceGraph,
+    ).map((quad) => quad.object);
+    const toezichtDossierTypeConceptScheme = new NamedNode(
+      DECISION_TYPE,
     );
+    return rdfTypes.find((rdfType) => {
+      return this.args.formStore.any(
+        rdfType,
+        SKOS('inScheme'),
+        toezichtDossierTypeConceptScheme,
+        undefined,
+      );
+    });
   }
 
   get path() {
