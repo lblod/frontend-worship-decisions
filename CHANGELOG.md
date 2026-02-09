@@ -1,5 +1,12 @@
 # Changelog
 
+## 0.15.7 (2026-02-09)
+#### :bug: Bug Fix
+* [#35](https://github.com/lblod/frontend-worship-decisions/pull/35) DL-7139: extract correct decision type to prevent loop ([@elpoelma](https://github.com/elpoelma))
+
+#### Committers: 1
+- Elena Poelman ([@elpoelma](https://github.com/elpoelma))
+
 ## 0.15.6 (2025-11-07)
 #### :rocket: Enhancement
 * [#34](https://github.com/lblod/frontend-worship-decisions/pull/34) [DL-6994]: Show sent date in the form ([@wolfderechter](https://github.com/wolfderechter))
