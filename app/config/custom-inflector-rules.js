@@ -34,7 +34,6 @@ inflector.irregular('form-solution', 'form-solutions');
 inflector.irregular('form-input', 'form-inputs');
 inflector.irregular('werkingsgebied', 'werkingsgebieden');
 inflector.irregular('submission', 'submissions');
-inflector.irregular('remote-url', 'remote-urls');
 inflector.irregular('submission-document', 'submission-documents');
 inflector.irregular('form-data', 'form-data');
 inflector.irregular('concept', 'concepts');
