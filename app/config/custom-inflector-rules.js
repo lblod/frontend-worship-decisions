@@ -35,6 +35,7 @@ inflector.irregular('form-input', 'form-inputs');
 inflector.irregular('werkingsgebied', 'werkingsgebieden');
 inflector.irregular('submission', 'submissions');
 inflector.irregular('submission-document', 'submission-documents');
+inflector.irregular('remote-data-object', 'remote-data-objects');
 inflector.irregular('form-data', 'form-data');
 inflector.irregular('concept', 'concepts');
 inflector.irregular('concept-scheme', 'concept-schemes');
