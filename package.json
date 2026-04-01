@@ -30,7 +30,10 @@
   },
   "overrides": {
     "ember-simple-auth": "$ember-simple-auth",
-    "torii": "1.0.0-beta.1"
+    "torii": "1.0.0-beta.1",
+    "@lblod/ember-submission-form-fields": {
+      "ember-data": "4.12.8"
+    }
   },
   "overridesNotes": {
     "ember-simple-auth": "acmidm-login doesn't support v4+ as a peerDep. remove the override once we switch to v2 of the addon.",
