@@ -15,5 +15,4 @@ export default class RemoteDataObjectModel extends Model {
     inverse: null,
   })
   file;
-
 }
