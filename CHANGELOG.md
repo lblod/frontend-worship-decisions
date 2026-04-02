@@ -1,5 +1,10 @@
 # Changelog
 
+## 0.16.0 (2026-04-02)
+
+#### :rocket: Enhancement
+* [#37](https://github.com/lblod/frontend-worship-decisions/pull/37) DL-7236: ERE: Adjust front-end for new URL-formatting in Databank Erediensten ([@kikef98](https://github.com/kikef98))
+
 ## 0.15.7 (2026-02-09)
 #### :bug: Bug Fix
 * [#35](https://github.com/lblod/frontend-worship-decisions/pull/35) DL-7139: extract correct decision type to prevent loop ([@elpoelma](https://github.com/elpoelma))
