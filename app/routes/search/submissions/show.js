@@ -2,6 +2,7 @@ import Route from '@ember/routing/route';
 import { inject as service } from '@ember/service';
 import { registerFormField } from 'frontend-worship-decisions/components/submissions/fields/decision-articles-field';
 import { registerFormField as registerDecisionDocumentsField } from 'frontend-worship-decisions/components/submissions/fields/decision-documents-field';
+import { registerFormField as registerDecisionRemoteDocumentsField } from 'frontend-worship-decisions/components/submissions/fields/decision-remote-documents';
 
 export default class SearchSubmissionsShowRoute extends Route {
   @service store;
@@ -11,6 +12,7 @@ export default class SearchSubmissionsShowRoute extends Route {
 
     registerFormField();
     registerDecisionDocumentsField();
+    registerDecisionRemoteDocumentsField();
   }
 
   model(params) {

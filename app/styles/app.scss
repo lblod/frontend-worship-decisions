@@ -20,6 +20,7 @@
 
 // COMPONENTS
 @import "@appuniversum/ember-appuniversum/styles/a-components";
+@import "project/c-decision-remote-data-objects";
 
 // PLUGINS
 @import "@appuniversum/ember-appuniversum/styles/a-plugins";
@@ -29,3 +30,5 @@
 
 // TEMPORARY HACKS AND QUICKFIXES
 @import 'shame';
+
+

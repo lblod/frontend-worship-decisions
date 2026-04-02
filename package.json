@@ -30,14 +30,17 @@
   },
   "overrides": {
     "ember-simple-auth": "$ember-simple-auth",
-    "torii": "1.0.0-beta.1"
+    "torii": "1.0.0-beta.1",
+    "@lblod/ember-submission-form-fields": {
+      "ember-data": "4.12.8"
+    }
   },
   "overridesNotes": {
     "ember-simple-auth": "acmidm-login doesn't support v4+ as a peerDep. remove the override once we switch to v2 of the addon.",
     "torii": "torii is used by ember-acmidm-login but v1.0.0-beta fixes some Ember 4 issues"
   },
   "devDependencies": {
-    "@appuniversum/ember-appuniversum": "^3.5.0",
+    "@appuniversum/ember-appuniversum": "^3.18.0",
     "@babel/eslint-parser": "^7.23.10",
     "@babel/plugin-proposal-decorators": "^7.21.0",
     "@ember/optional-features": "^2.0.0",
@@ -51,8 +54,8 @@
     "@glimmer/tracking": "^1.1.2",
     "@lblod/ember-acmidm-login": "^1.3.0",
     "@lblod/ember-mock-login": "^0.10.0",
-    "@lblod/ember-submission-form-fields": "^2.23.0",
-    "@lblod/submission-form-helpers": "^2.10.2",
+    "@lblod/ember-submission-form-fields": "^3.5.0",
+    "@lblod/submission-form-helpers": "^3.1.0",
     "@zestia/ember-auto-focus": "^5.1.0",
     "broccoli-asset-rev": "^3.0.0",
     "concurrently": "^8.0.1",
@@ -112,5 +115,8 @@
   },
   "ember": {
     "edition": "octane"
+  },
+  "dependencies": {
+    "client-zip": "^2.5.0"
   }
 }
