@@ -2,8 +2,13 @@
   <section class="au-o-region">
     <div class="au-o-layout au-o-layout--small">
       <AuHeading @level="1" @skin="1" class="au-u-margin-bottom">Helppagina</AuHeading>
+      <AuHeading @level="2" @skin="2" class="au-u-margin-bottom">Meer informatie</AuHeading>
+      <div class="au-o-flow au-u-margin-bottom au-u-para">
+        <AuLinkExternal @icon="none" href="https://abb-vlaanderen.gitbook.io/handleiding-databank-erediensten">
+          Lees de handleiding
+        </AuLinkExternal>
+      </div>
       <AuHeading @level="2" @skin="2" class="au-u-margin-bottom">Veelgestelde vragen</AuHeading>
-
       <div class="au-o-flow au-u-margin-bottom-large">
         <AuCard id="help-zoekresultaten" @expandable="true" @flex="true" @divided="true" as |c|>
           <c.header @badgeSkin="brand" @badgeIcon="info-circle">
