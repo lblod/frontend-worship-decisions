@@ -1,4 +1,11 @@
 # Changelog
+## 0.16.1 (2026-04-17)
+
+#### :rocket: Enhancement
+* [#38](https://github.com/lblod/frontend-worship-decisions/pull/38) [DL-7266]: update the manual link on the login page ([@wolfderechter](https://github.com/wolfderechter))
+
+#### Committers: 1
+- [@wolfderechter](https://github.com/wolfderechter)
 
 ## 0.16.0 (2026-04-02)
 
