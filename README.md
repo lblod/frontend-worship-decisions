@@ -2,29 +2,38 @@
 
 Frontend of the worship decisions application
 
-This README outlines the details of collaborating on this Ember application.
-A short introduction of this app could easily go here.
+## Environment variables
+
+The [static-file-service](https://github.com/mu-semtech/static-file-service?tab=readme-ov-file#how-to-configure-an-ember-application-at-runtime-using-environment-variables) docker image (which we use to host the frontend) supports configuring environment variables. The following options are available.
+
+### ACM/IDM
+
+| Name                        | Description                                                                |
+| --------------------------- | -------------------------------------------------------------------------- |
+| `EMBER_ACMIDM_CLIENT_ID`    | The unique client id for a specific environment                            |
+| `EMBER_ACMIDM_BASE_URL`     | The URL where users will be redirected to when they want to log in         |
+| `EMBER_ACMIDM_REDIRECT_URL` | The callback URL that ACM/IDM will use after the user logs in successfully |
+| `EMBER_ACMIDM_LOGOUT_URL`   | The URL where users will be redirected to when they want to log out        |
 
 ## Prerequisites
 
 You will need the following things properly installed on your computer.
 
-* [Git](https://git-scm.com/)
-* [Node.js](https://nodejs.org/) (with npm)
-* [Ember CLI](https://cli.emberjs.com/release/)
-* [Google Chrome](https://google.com/chrome/)
+- [Git](https://git-scm.com/)
+- [Node.js](https://nodejs.org/) (with npm)
+- [Google Chrome](https://google.com/chrome/)
 
 ## Installation
 
-* `git clone <repository-url>` this repository
-* `cd frontend-worship-decisions`
-* `npm install`
+- `git clone <repository-url>` this repository
+- `cd frontend-worship-decisions`
+- `npm install`
 
 ## Running / Development
 
-* `ember serve`
-* Visit your app at [http://localhost:4200](http://localhost:4200).
-* Visit your tests at [http://localhost:4200/tests](http://localhost:4200/tests).
+- `ember serve`
+- Visit your app at [http://localhost:4200](http://localhost:4200).
+- Visit your tests at [http://localhost:4200/tests](http://localhost:4200/tests).
 
 ### Code Generators
 
@@ -32,27 +41,23 @@ Make use of the many generators for code, try `ember help generate` for more det
 
 ### Running Tests
 
-* `ember test`
-* `ember test --server`
+- `ember test`
+- `ember test --server`
 
 ### Linting
 
-* `npm run lint`
-* `npm run lint:fix`
+- `npm run lint`
+- `npm run lint:fix`
 
 ### Building
 
-* `ember build` (development)
-* `ember build --environment production` (production)
-
-### Deploying
-
-Specify what it takes to deploy your app.
+- `ember build` (development)
+- `ember build --environment production` (production)
 
 ## Further Reading / Useful Links
 
-* [ember.js](https://emberjs.com/)
-* [ember-cli](https://cli.emberjs.com/release/)
-* Development Browser Extensions
-  * [ember inspector for chrome](https://chrome.google.com/webstore/detail/ember-inspector/bmdblncegkenkacieihfhpjfppoconhi)
-  * [ember inspector for firefox](https://addons.mozilla.org/en-US/firefox/addon/ember-inspector/)
+- [ember.js](https://emberjs.com/)
+- [ember-cli](https://cli.emberjs.com/release/)
+- Development Browser Extensions
+  - [ember inspector for chrome](https://chrome.google.com/webstore/detail/ember-inspector/bmdblncegkenkacieihfhpjfppoconhi)
+  - [ember inspector for firefox](https://addons.mozilla.org/en-US/firefox/addon/ember-inspector/)
