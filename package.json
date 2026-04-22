@@ -70,7 +70,6 @@
     "ember-cli-terser": "^4.0.2",
     "ember-concurrency": "^3.1.1",
     "ember-data": "~4.12.3",
-    "ember-fetch": "^8.1.2",
     "ember-load-initializers": "^2.1.2",
     "ember-modifier": "^4.1.0",
     "ember-moment": "^10.0.0",
