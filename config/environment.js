@@ -19,9 +19,6 @@ module.exports = function (environment) {
       // when it is created
     },
     appName: 'Databank Erediensten',
-    moment: {
-      allowEmpty: true,
-    },
     //TODO: activate once ACM/IDM is ready
     torii: {
       disableRedirectInitializer: true,
