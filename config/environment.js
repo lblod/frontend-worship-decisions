@@ -19,9 +19,6 @@ module.exports = function (environment) {
       // when it is created
     },
     appName: 'Databank Erediensten',
-    moment: {
-      allowEmpty: true,
-    },
     //TODO: activate once ACM/IDM is ready
     torii: {
       disableRedirectInitializer: true,
@@ -34,11 +31,6 @@ module.exports = function (environment) {
           logoutUrl: '{{OAUTH_LOGOUT_URL}}',
         },
       },
-    },
-    // This config can be removed once the auto-startup logic is removed from ember-plausible:
-    // https://github.com/redpencilio/ember-plausible/issues/4
-    'ember-plausible': {
-      enabled: false,
     },
     plausible: {
       domain: '{{ANALYTICS_APP_DOMAIN}}',

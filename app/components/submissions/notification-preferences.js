@@ -2,12 +2,15 @@ import Component from '@glimmer/component';
 import { inject as service } from '@ember/service';
 import { action } from '@ember/object';
 import { tracked } from '@glimmer/tracking';
+import { autofocus } from '../../modifiers/auto-focus';
 
 export default class NotificationPreferencesComponent extends Component {
   @service currentSession;
 
   @tracked wilMailOntvangen = this.currentSession.group.wilMailOntvangen;
   @tracked emailAddress = this.currentSession.group.mailAdres;
+
+  autofocus = autofocus;
 
   @action
   handleEmailChange(event) {
