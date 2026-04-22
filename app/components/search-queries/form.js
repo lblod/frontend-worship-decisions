@@ -40,10 +40,9 @@ export default class SearchQueriesFormComponent extends Component {
     );
   }
 
-  @task
-  *init(form) {
-    yield this.setupForm(form);
-  }
+  init = task(async (form) => {
+    await this.setupForm(form);
+  });
 
   async setupForm(form) {
     const store = new ForkingStore();

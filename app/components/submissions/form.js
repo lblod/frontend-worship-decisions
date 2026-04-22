@@ -23,19 +23,18 @@ export default class SubmissionsFormComponent extends Component {
     this.loadData.perform();
   }
 
-  @task
-  *loadData() {
-    const submission = yield this.args.submission;
+  loadData = task(async () => {
+    const submission = await this.args.submission;
     // Fetch data from backend
-    const submissionDocument = yield submission.submissionDocument;
+    const submissionDocument = await submission.submissionDocument;
 
     if (!submissionDocument) {
       warn('No submission document. Transitioning to index.');
       this.router.transitionTo('supervision.submissions');
     }
 
-    const response = yield fetch(`/submission-forms/${submissionDocument.id}`);
-    const { source, additions, removals, meta, form } = yield response.json();
+    const response = await fetch(`/submission-forms/${submissionDocument.id}`);
+    const { source, additions, removals, meta, form } = await response.json();
 
     // Prepare data in forking store
 
@@ -65,5 +64,5 @@ export default class SubmissionsFormComponent extends Component {
     this.graphs = { formGraph, sourceGraph, metaGraph };
     this.form = formStore.any(undefined, RDF('type'), FORM('Form'), formGraph);
     this.sourceNode = new NamedNode(submissionDocument.uri);
-  }
+  });
 }

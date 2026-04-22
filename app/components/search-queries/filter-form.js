@@ -25,12 +25,16 @@ export default class SearchQueriesFilterFormComponent extends SearchQueriesFormC
   // NOTE: the problem here lies in that if an outsider makes changes in the store,
   // the field components are not aware of this. There for, for now, we force the form to rerender by temporarily
   // changing the "show" argument.
-  @task
-  *resetFilters() {
-    yield super.setupForm(FILTER_FORM_UUID);
+  resetFilters = task(async () => {
+    // We want to call the parent's setupForm method, and super isn't available in non-methods so we have to do something like this.
+    // TODO: figure out why we are extending a different component in the first place..
+    await SearchQueriesFormComponent.prototype.setupForm.call(
+      this,
+      FILTER_FORM_UUID
+    );
     this.updateQueryParams();
     this.registerObserver();
-  }
+  });
 
   // INTERNAL LOGIC
 
