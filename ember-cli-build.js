@@ -20,11 +20,11 @@ module.exports = function (defaults) {
     staticHelpers: true,
     staticModifiers: true,
     staticComponents: true,
-    // Disabled for now, since it causes issues for the virtual `rsvp` module.
-    // We can enable this again once we update to ember-acmidm-login v2
-    // staticEmberSource: true,
-    // amdCompatibility: {
-    //   es: [['fetch', ['default', 'Headers']]], // Used by @lblod/ember-acmidm-login v1.4, we can remove this once we update to v2
-    // },
+    staticEmberSource: true,
+    skipBabel: [
+      {
+        package: 'qunit',
+      },
+    ],
   });
 };
