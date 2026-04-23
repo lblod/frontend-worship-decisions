@@ -1,4 +1,4 @@
-import { inject as service } from '@ember/service';
+import { service } from '@ember/service';
 import BaseSessionService from 'ember-simple-auth/services/session';
 import ENV from 'frontend-worship-decisions/config/environment';
 

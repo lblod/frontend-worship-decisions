@@ -5,7 +5,7 @@ import search from '../../utils/mu-search';
 import Snapshot from '../../utils/snapshot';
 import { tracked } from '@glimmer/tracking';
 import { getQueryParams } from '../../utils/filter-form-helpers';
-import { inject as service } from '@ember/service';
+import { service } from '@ember/service';
 
 export default class SearchSubmissionsRoute extends Route {
   @service store;
