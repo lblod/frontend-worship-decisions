@@ -25,7 +25,6 @@ setupDeprecationWorkflow({
       handler: 'silence',
       matchId: 'warp-drive:deprecate-legacy-request-methods',
     },
-    { handler: 'silence', matchId: 'warp-drive.deprecate-tracking-package' },
     // TODO: resolve these before updating to ember-power-select v9
     {
       handler: 'silence',

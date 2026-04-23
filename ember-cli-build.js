@@ -1,6 +1,7 @@
 'use strict';
 
 const EmberApp = require('ember-cli/lib/broccoli/ember-app');
+// const { setConfig } = require('@warp-drive/core/build-config');
 
 module.exports = function (defaults) {
   const app = new EmberApp(defaults, {
@@ -11,17 +12,18 @@ module.exports = function (defaults) {
         // NOTE: put any code coverage plugins last, after the transform.
       ],
     },
-    emberData: {
-      deprecations: {
-        // New projects can safely leave this deprecation disabled.
-        // If upgrading, to opt-into the deprecated behavior, set this to true and then follow:
-        // https://deprecations.emberjs.com/id/ember-data-deprecate-store-extends-ember-object
-        // before upgrading to Ember Data 6.0
-        DEPRECATE_STORE_EXTENDS_EMBER_OBJECT: false,
-      },
-    },
-    // Add options here
   });
+
+  // TODO: uncomment once we have started resolving WarpDrive deprecations
+  // setConfig(app, __dirname, {
+  //   // this should be the most recent <major>.<minor> version for
+  //   // which all deprecations have been fully resolved
+  //   // and should be updated when that changes
+  //   compatWith: '5.8',
+  //   deprecations: {
+  //     // ... list individual deprecations that have been resolved here
+  //   },
+  // });
 
   const { Webpack } = require('@embroider/webpack');
   return require('@embroider/compat').compatBuild(app, Webpack, {

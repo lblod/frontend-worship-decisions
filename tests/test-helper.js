@@ -1,3 +1,4 @@
+import '@warp-drive/ember/install';
 import Application from 'frontend-worship-decisions/app';
 import config from 'frontend-worship-decisions/config/environment';
 import * as QUnit from 'qunit';
