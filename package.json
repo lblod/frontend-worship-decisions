@@ -47,7 +47,7 @@
     "@glimmer/tracking": "^1.1.2",
     "@lblod/ember-acmidm-login": "^2.3.0",
     "@lblod/ember-mock-login": "^0.14.0",
-    "@lblod/ember-submission-form-fields": "^3.5.0",
+    "@lblod/ember-submission-form-fields": "^3.6.0",
     "@lblod/submission-form-helpers": "^3.1.0",
     "@warp-drive/core": "~5.8.1",
     "@warp-drive/json-api": "~5.8.1",
