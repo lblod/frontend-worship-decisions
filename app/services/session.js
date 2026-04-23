@@ -9,7 +9,7 @@ export default class SessionService extends BaseSessionService {
   requireAuthentication(transition, routeOrCallback) {
     const isAuthenticated = super.requireAuthentication(
       transition,
-      routeOrCallback
+      routeOrCallback,
     );
 
     // The user isn't authenticated. We store the url in a cookie so we can retry it after logging in.

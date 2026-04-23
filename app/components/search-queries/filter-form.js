@@ -30,7 +30,7 @@ export default class SearchQueriesFilterFormComponent extends SearchQueriesFormC
     // TODO: figure out why we are extending a different component in the first place..
     await SearchQueriesFormComponent.prototype.setupForm.call(
       this,
-      FILTER_FORM_UUID
+      FILTER_FORM_UUID,
     );
     this.updateQueryParams();
     this.registerObserver();
@@ -54,7 +54,7 @@ export default class SearchQueriesFilterFormComponent extends SearchQueriesFormC
     queryParamsToFormStore(
       this.args.queryParams,
       this.formStore,
-      this.sourceNode
+      this.sourceNode,
     );
   }
 
