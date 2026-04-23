@@ -1,5 +1,5 @@
 import Controller from '@ember/controller';
-import { NotFoundError } from '@ember-data/adapter/error';
+import { NotFoundError } from '@warp-drive/legacy/adapter/error';
 
 export default class ErrorController extends Controller {
   get error() {

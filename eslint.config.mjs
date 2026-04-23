@@ -69,6 +69,10 @@ export default [
         ...globals.browser,
       },
     },
+    rules: {
+      'warp-drive/no-external-request-patterns': 'off', // Not sure if we want to replace _all_ regular fetch calls..
+      'warp-drive/no-legacy-request-patterns': 'off', // TODO: remove this once we refactored all the code to the new patterns
+    },
   },
   {
     ...qunit.configs.recommended,
