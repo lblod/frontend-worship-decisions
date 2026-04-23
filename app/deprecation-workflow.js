@@ -21,11 +21,23 @@ setupDeprecationWorkflow({
     /* example: */
     /* { handler: 'silence', matchId: 'template-action' }, */
     // TODO: resolve these before updating to WarpDrive v6
-    { handler: 'silence', matchId: 'warp-drive:deprecate-legacy-request-methods' },
+    {
+      handler: 'silence',
+      matchId: 'warp-drive:deprecate-legacy-request-methods',
+    },
     { handler: 'silence', matchId: 'warp-drive.deprecate-tracking-package' },
     // TODO: resolve these before updating to ember-power-select v9
-    { handler: 'silence', matchId: 'ember-power-select.deprecate-power-select-multiple' },
-    { handler: 'silence', matchId: 'ember-power-select.deprecate-power-select-multiple-trigger' },
-    { handler: 'silence', matchId: 'ember-power-select.deprecate-power-select-multiple-input' },
+    {
+      handler: 'silence',
+      matchId: 'ember-power-select.deprecate-power-select-multiple',
+    },
+    {
+      handler: 'silence',
+      matchId: 'ember-power-select.deprecate-power-select-multiple-trigger',
+    },
+    {
+      handler: 'silence',
+      matchId: 'ember-power-select.deprecate-power-select-multiple-input',
+    },
   ],
 });

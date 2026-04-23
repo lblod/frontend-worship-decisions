@@ -61,15 +61,15 @@ class DecisionDocumentsField extends Component {
   }
 
   get decisionType() {
-    const rdfTypes = this.args.formStore.match(
-      this.args.sourceNode,
-      RDF('type'),
-      undefined,
-      this.args.graphs.sourceGraph,
-    ).map((quad) => quad.object);
-    const toezichtDossierTypeConceptScheme = new NamedNode(
-      DECISION_TYPE,
-    );
+    const rdfTypes = this.args.formStore
+      .match(
+        this.args.sourceNode,
+        RDF('type'),
+        undefined,
+        this.args.graphs.sourceGraph,
+      )
+      .map((quad) => quad.object);
+    const toezichtDossierTypeConceptScheme = new NamedNode(DECISION_TYPE);
     return rdfTypes.find((rdfType) => {
       return this.args.formStore.any(
         rdfType,

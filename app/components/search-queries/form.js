@@ -1,4 +1,3 @@
-/* eslint-disable ember/classic-decorator-hooks*/
 import { service } from '@ember/service';
 import Component from '@glimmer/component';
 import { tracked } from '@glimmer/tracking';

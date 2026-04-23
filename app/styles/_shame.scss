@@ -29,9 +29,12 @@
   ========================================================================== */
 
 .au-c-main-container__content.au-c-main-container__content--scroll {
-  height: calc(100vh - 4.2rem); // make sure scrolling happens as anticipated on medium sizes
+  height: calc(
+    100vh - 4.2rem
+  ); // make sure scrolling happens as anticipated on medium sizes
 
-  @include mq($until: small) { // make sure you can scroll through everything in firefox on small sizes
+  @include mq($until: small) {
+    // make sure you can scroll through everything in firefox on small sizes
     .au-o-grid--fixed,
     .au-o-grid--fixed > .au-o-grid__item {
       height: auto;
@@ -39,16 +42,16 @@
     }
   }
 
-  @include mq($from: small) { // make sure grid looks good when stacked, too much spacing
+  @include mq($from: small) {
+    // make sure grid looks good when stacked, too much spacing
 
     .au-c-sidebar .au-o-grid--small > .au-o-grid__item:first-child {
-      padding-bottom: 0
+      padding-bottom: 0;
     }
 
     .au-c-sidebar .au-o-grid--small > .au-o-grid__item + .au-o-grid__item {
       padding-top: 0;
     }
-
   }
 }
 
@@ -104,5 +107,5 @@
   display: block; // AuButtons are inline-flex by default
   line-height: normal;
   height: auto; // override the fixed height of the button height
-  border: .1rem #c6cdd3 solid;
+  border: 0.1rem #c6cdd3 solid;
 }
