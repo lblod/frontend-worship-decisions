@@ -1,9 +1,13 @@
-import './utils/deprecation-workflow';
 import Application from '@ember/application';
 import Resolver from 'ember-resolver';
 import loadInitializers from 'ember-load-initializers';
-import config from './config/environment';
 import './config/custom-inflector-rules';
+import config from './config/environment';
+import { importSync, isDevelopingApp, macroCondition } from '@embroider/macros';
+
+if (macroCondition(isDevelopingApp())) {
+  importSync('./deprecation-workflow');
+}
 
 export default class App extends Application {
   modulePrefix = config.modulePrefix;
