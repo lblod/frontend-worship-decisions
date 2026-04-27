@@ -36,6 +36,7 @@ export default {
         regenerator: false,
       },
     ],
+    'ember-concurrency/async-arrow-task-transform',
     ...babelCompatSupport(),
   ],
 

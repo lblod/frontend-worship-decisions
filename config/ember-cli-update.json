@@ -9,8 +9,8 @@
           "name": "@ember/app-blueprint",
           "isBaseBlueprint": true,
           "options": [
-            "--ci-provider=none",
-            "--no-welcome"
+            "--no-welcome",
+            "--ci-provider=none"
           ]
         }
       ]

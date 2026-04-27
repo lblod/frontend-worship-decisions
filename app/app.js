@@ -1,14 +1,13 @@
 import './styles/app.scss';
 import '@warp-drive/ember/install';
 import Application from '@ember/application';
+import compatModules from '@embroider/virtual/compat-modules';
 import Resolver from 'ember-resolver';
 import loadInitializers from 'ember-load-initializers';
 import './config/custom-inflector-rules';
-import config from './config/environment';
+import config from 'frontend-worship-decisions/config/environment';
 import { importSync, isDevelopingApp, macroCondition } from '@embroider/macros';
-
-import setupInspector from "@embroider/legacy-inspector-support/ember-source-4.12";
-import compatModules from "@embroider/virtual/compat-modules";
+import setupInspector from '@embroider/legacy-inspector-support/ember-source-4.12';
 
 if (macroCondition(isDevelopingApp())) {
   importSync('./deprecation-workflow');

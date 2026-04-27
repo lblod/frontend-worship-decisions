@@ -11,5 +11,6 @@ export function start() {
 
   setup(QUnit.assert);
   setupEmberOnerrorValidation();
+
   qunitStart();
 }
