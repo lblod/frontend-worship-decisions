@@ -6,6 +6,9 @@ import './config/custom-inflector-rules';
 import config from './config/environment';
 import { importSync, isDevelopingApp, macroCondition } from '@embroider/macros';
 
+import setupInspector from "@embroider/legacy-inspector-support/ember-source-4.12";
+import compatModules from "@embroider/virtual/compat-modules";
+
 if (macroCondition(isDevelopingApp())) {
   importSync('./deprecation-workflow');
 }
@@ -13,7 +16,8 @@ if (macroCondition(isDevelopingApp())) {
 export default class App extends Application {
   modulePrefix = config.modulePrefix;
   podModulePrefix = config.podModulePrefix;
-  Resolver = Resolver;
+  Resolver = Resolver.withModules(compatModules);
+  inspector = setupInspector(this);
 }
 
-loadInitializers(App, config.modulePrefix);
+loadInitializers(App, config.modulePrefix, compatModules);

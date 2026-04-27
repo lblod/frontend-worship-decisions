@@ -1,9 +1,17 @@
-'use strict';
-
+'use strict';;
 const EmberApp = require('ember-cli/lib/broccoli/ember-app');
+
+const {
+  compatBuild
+} = require("@embroider/compat");
+
 // const { setConfig } = require('@warp-drive/core/build-config');
 
-module.exports = function (defaults) {
+module.exports = async function(defaults) {
+  const {
+    buildOnce
+  } = await import("@embroider/vite");
+
   const app = new EmberApp(defaults, {
     babel: {
       plugins: [
@@ -25,16 +33,10 @@ module.exports = function (defaults) {
   //   },
   // });
 
-  const { Webpack } = require('@embroider/webpack');
-  return require('@embroider/compat').compatBuild(app, Webpack, {
+  return compatBuild(app, buildOnce, {
     staticAddonTestSupportTrees: true,
     staticAddonTrees: true,
     staticEmberSource: true,
-    staticInvokables: true,
-    skipBabel: [
-      {
-        package: 'qunit',
-      },
-    ],
+    staticInvokables: true
   });
 };
