@@ -2,7 +2,6 @@
    # Worship decisions
    ================================== */
 
-
 // SETTINGS
 @import "@appuniversum/ember-appuniversum/styles/a-settings";
 
@@ -29,6 +28,4 @@
 @import "@appuniversum/ember-appuniversum/styles/a-utilities";
 
 // TEMPORARY HACKS AND QUICKFIXES
-@import 'shame';
-
-
+@import "shame";

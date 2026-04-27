@@ -1,4 +1,4 @@
-import Model, { attr, belongsTo, hasMany } from '@ember-data/model';
+import Model, { attr, belongsTo, hasMany } from '@warp-drive/legacy/model';
 
 export default class Submission extends Model {
   @attr('datetime', {
@@ -18,6 +18,8 @@ export default class Submission extends Model {
   @attr source;
   @attr uri;
   @attr href;
+
+  /* eslint-disable-next-line warp-drive/no-invalid-resource-types -- it incorrectly flags this type and wants to replace it with `form-datum` */
   @belongsTo('form-data', {
     async: true,
     inverse: null,

@@ -1,25 +1,26 @@
 <div
   {{! template-lint-disable no-at-ember-render-modifiers }}
   {{! TODO: replace this with a getPromiseState based solution }}
-  {{did-update (perform this.loadData) @submission }}
+  {{did-update (perform this.loadData) @submission}}
 >
   {{#if this.loadData.isRunning}}
     <span>Aan het laden...</span>
   {{else}}
-  <div class="au-u-margin-bottom">
-    <div class="au-o-grid">
-      <div class="au-o-grid__item au-u-1-2">
-        <AuLabel>Verstuurd op</AuLabel>
-        <p>{{moment-format @submission.sentDate 'DD-MM-YYYY'}}</p>
+    <div class="au-u-margin-bottom">
+      <div class="au-o-grid">
+        <div class="au-o-grid__item au-u-1-2">
+          <AuLabel>Verstuurd op</AuLabel>
+          <p>{{moment-format @submission.sentDate "DD-MM-YYYY"}}</p>
+        </div>
       </div>
     </div>
-  </div>
     <SubmissionForm
       @form={{this.form}}
       @graphs={{this.graphs}}
       @sourceNode={{this.sourceNode}}
       @formStore={{this.formStore}}
       @show={{true}}
-      @forceShowErrors={{false}} />
+      @forceShowErrors={{false}}
+    />
   {{/if}}
 </div>

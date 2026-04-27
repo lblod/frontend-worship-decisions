@@ -1,4 +1,4 @@
-import Model, { attr, hasMany } from '@ember-data/model';
+import Model, { attr, hasMany } from '@warp-drive/legacy/model';
 
 export const ADMINISTRATIVE_CLASSIFICATION =
   'http://data.vlaanderen.be/id/conceptscheme/BestuurseenheidClassificatieCode';

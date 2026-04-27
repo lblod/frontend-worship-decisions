@@ -1,20 +1,17 @@
 import AuButton from '@appuniversum/ember-appuniversum/components/au-button';
 import AuHelpText from '@appuniversum/ember-appuniversum/components/au-help-text';
-import AuIcon from '@appuniversum/ember-appuniversum/components/au-icon';
 import AuLabel from '@appuniversum/ember-appuniversum/components/au-label';
 import AuLinkExternal from '@appuniversum/ember-appuniversum/components/au-link-external';
 import AuLoader from '@appuniversum/ember-appuniversum/components/au-loader';
 import AuTable from '@appuniversum/ember-appuniversum/components/au-table';
 import { AddIcon } from '@appuniversum/ember-appuniversum/components/icons/add';
 import { BinIcon } from '@appuniversum/ember-appuniversum/components/icons/bin';
-import { InfoCircleIcon } from '@appuniversum/ember-appuniversum/components/icons/info-circle';
 import Component from '@glimmer/component';
 import { tracked } from '@glimmer/tracking';
 import { fn } from '@ember/helper';
 import { on } from '@ember/modifier';
 import { registerFormFields } from '@lblod/ember-submission-form-fields';
 import { task } from 'ember-concurrency';
-import worshipDecisionsDatabaseUrl from 'frontend-worship-decisions/helpers/worship-decisions-database-url';
 import { RDF } from 'frontend-worship-decisions/rdf/namespaces';
 import { formatDate } from 'frontend-worship-decisions/utils/date';
 import { isRequiredField } from 'frontend-worship-decisions/utils/semantic-forms';
@@ -64,15 +61,15 @@ class DecisionDocumentsField extends Component {
   }
 
   get decisionType() {
-    const rdfTypes = this.args.formStore.match(
-      this.args.sourceNode,
-      RDF('type'),
-      undefined,
-      this.args.graphs.sourceGraph,
-    ).map((quad) => quad.object);
-    const toezichtDossierTypeConceptScheme = new NamedNode(
-      DECISION_TYPE,
-    );
+    const rdfTypes = this.args.formStore
+      .match(
+        this.args.sourceNode,
+        RDF('type'),
+        undefined,
+        this.args.graphs.sourceGraph,
+      )
+      .map((quad) => quad.object);
+    const toezichtDossierTypeConceptScheme = new NamedNode(DECISION_TYPE);
     return rdfTypes.find((rdfType) => {
       return this.args.formStore.any(
         rdfType,

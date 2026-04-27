@@ -1,7 +1,8 @@
 {{#let (has-block "decoration") as |hasDecoration|}}
   <div class="au-o-layout au-o-region-large">
     <div
-      class="au-u-flex@medium au-u-flex--row-reverse au-u-flex--center au-u-flex--vertical-center {{if hasDecoration "u-h-full"}}"
+      class="au-u-flex@medium au-u-flex--row-reverse au-u-flex--center au-u-flex--vertical-center
+        {{if hasDecoration 'u-h-full'}}"
     >
       {{#if hasDecoration}}
         <div
