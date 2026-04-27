@@ -35,6 +35,19 @@ You will need the following things properly installed on your computer.
 - Visit your app at [http://localhost:4200](http://localhost:4200).
 - Visit your tests at [http://localhost:4200/tests](http://localhost:4200/tests).
 
+### Environment proxies
+
+To proxy to a specific environment, add a .env.local file with a `PROXY` environment variable. After that, `npm start` should proxy to the correct url.
+
+```
+#.env.local
+
+# DEV
+PROXY=https://dev.databankerediensten.lokaalbestuur.lblod.info/
+# QA
+PROXY=https://databankerediensten.lokaalbestuur.lblod.info/
+```
+
 ### Code Generators
 
 Make use of the many generators for code, try `ember help generate` for more details
