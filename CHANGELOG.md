@@ -1,4 +1,14 @@
 # Changelog
+## v0.17.0 (2026-04-27)
+
+#### :boom: Breaking Change
+* [#40](https://github.com/lblod/frontend-worship-decisions/pull/40) [DL-6720] Update the authentication setup ([@Windvis](https://github.com/Windvis))
+
+#### :house: Internal
+* [#42](https://github.com/lblod/frontend-worship-decisions/pull/42) Update to Ember 6.12 ([@Windvis](https://github.com/Windvis))
+* [#41](https://github.com/lblod/frontend-worship-decisions/pull/41) [DL-6721] Update to Ember v5.12 ([@Windvis](https://github.com/Windvis))
+* [#39](https://github.com/lblod/frontend-worship-decisions/pull/39) Dependency maintenance ([@Windvis](https://github.com/Windvis))
+
 ## 0.16.1 (2026-04-17)
 
 #### :rocket: Enhancement
