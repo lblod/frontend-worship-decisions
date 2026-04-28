@@ -20,6 +20,7 @@ import { extractDocumentsFromTtl } from './-shared/utils';
 import { NamedNode } from 'rdflib';
 import { SKOS } from '../../../rdf/namespaces';
 import { DECISION_TYPE } from '../../../models/concept-scheme';
+import { isSome } from '../../../utils/option';
 
 export function registerFormField() {
   registerFormFields([
@@ -116,7 +117,6 @@ class DecisionDocumentsField extends Component {
 
       if (response.ok) {
         const ttlData = await response.text();
-
         if (ttlData.length > 0) {
           let data = extractDocumentsFromTtl(ttlData);
 
@@ -129,7 +129,7 @@ class DecisionDocumentsField extends Component {
       }
     });
 
-    this.documents = await Promise.all(documentPromises);
+    this.documents = (await Promise.all(documentPromises)).filter(isSome);
   });
 
   addDocuments = (documentsToAdd) => {
