@@ -1,4 +1,9 @@
 # Changelog
+## v0.17.1 (2026-04-29)
+
+#### :bug: Bug Fix
+* [#44](https://github.com/lblod/frontend-worship-decisions/pull/44) Fix the logout flow ([@Windvis](https://github.com/Windvis))
+
 ## v0.17.0 (2026-04-27)
 
 #### :boom: Breaking Change
