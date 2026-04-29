@@ -6,6 +6,14 @@ export default class SessionService extends BaseSessionService {
   @service currentSession;
   @service router;
 
+  get isAcmIdmSession() {
+    if (!this.isAuthenticated) {
+      return false;
+    }
+
+    return this.data.authenticated.authenticator === 'authenticator:acm-idm';
+  }
+
   requireAuthentication(transition, routeOrCallback) {
     const isAuthenticated = super.requireAuthentication(
       transition,
@@ -31,8 +39,20 @@ export default class SessionService extends BaseSessionService {
     this.currentSession.load();
   }
 
+  invalidate() {
+    // We store the flag here since the data is cleared before the handleInvalidation method is called.
+    this.wasAcmIdmSession = this.isAcmIdmSession;
+    super.invalidate(...arguments);
+  }
+
   handleInvalidation() {
-    const logoutUrl = ENV.torii.providers['acmidm-oauth2'].logoutUrl;
+    let logoutUrl;
+    if (this.wasAcmIdmSession) {
+      logoutUrl = ENV.acmidm.logoutUrl;
+    } else {
+      logoutUrl = this.router.urlFor('mock-login');
+    }
+
     super.handleInvalidation(logoutUrl);
   }
 }
