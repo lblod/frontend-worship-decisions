@@ -1,4 +1,12 @@
 # Changelog
+## v0.18.0 (2026-05-07)
+
+#### :boom: Breaking Change
+* [#45](https://github.com/lblod/frontend-worship-decisions/pull/45) [DL-7323] Switch to `@ember/app-blueprint` and Vite ([@Windvis](https://github.com/Windvis))
+
+#### :bug: Bug Fix
+* [#46](https://github.com/lblod/frontend-worship-decisions/pull/46) DL-7337: fix the "download all as zip" feature ([@DamonKennes](https://github.com/DamonKennes))
+
 ## v0.17.1 (2026-04-29)
 
 #### :bug: Bug Fix
