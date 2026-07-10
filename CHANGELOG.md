@@ -1,4 +1,9 @@
 # Changelog
+## v0.18.1 (2026-07-10)
+
+#### :bug: Bug Fix
+* [#47](https://github.com/lblod/frontend-worship-decisions/pull/47) [DL-7363] fix downloads for files with special characters + zip ([@DamonKennes](https://github.com/DamonKennes))
+
 ## v0.18.0 (2026-05-07)
 
 #### :boom: Breaking Change
