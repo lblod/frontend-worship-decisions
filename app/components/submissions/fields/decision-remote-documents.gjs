@@ -38,6 +38,7 @@ import {
   filenameWithoutExtension,
 } from '../../../utils/file';
 import { autofocus } from '../../../modifiers/auto-focus';
+import LinkChecker from './link-checker';
 
 export function registerFormField() {
   registerFormFields([
@@ -622,12 +623,7 @@ const RemoteDataObjectInfoCard = <template>
             </AuPill>
             {{humanReadableSize @remoteDataObject.file}}
           </div>
-          <AuLinkExternal
-            @icon="external-link"
-            href={{@remoteDataObject.source}}
-          >
-            {{@remoteDataObject.source}}
-          </AuLinkExternal>
+          <LinkChecker @url={{@remoteDataObject.source}} />
         </div>
         <div>
           <AuLinkExternal
@@ -658,12 +654,7 @@ const RemoteDataObjectInfoCard = <template>
               </tooltip.Content>
             </AuTooltip>
           </AuLabel>
-          <AuLinkExternal
-            @icon="external-link"
-            href={{@remoteDataObject.source}}
-          >
-            {{@remoteDataObject.source}}
-          </AuLinkExternal>
+          <LinkChecker @url={{@remoteDataObject.source}} />
         </div>
         <div>
           {{#if (downloadSuccess @remoteDataObject)}}
