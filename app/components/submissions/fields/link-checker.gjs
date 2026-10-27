@@ -9,9 +9,12 @@ import AuLinkExternal from '@appuniversum/ember-appuniversum/components/au-link-
 export default class LinkChecker extends Component {
   @tracked statusText = 'De link werkt misschien niet';
   @tracked skin = 'default';
+  @tracked hasChecked = false;
 
   @action
   async checkLink() {
+    if (this.hasChecked && this.skin !== 'default') return;
+    this.hasChecked = true;
     let linkStatus = 'unchecked';
 
     try {
