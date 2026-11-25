@@ -1,4 +1,9 @@
 # Changelog
+## 0.19.0 (2026-11-25)
+
+#### :rocket: Enhancement
+* [#48](https://github.com/lblod/frontend-worship-decisions/pull/48) [DL-7568]: Improve UX of download functionality in Databank ERE ([@NikiDeVisscher](https://github.com/NikiDeVisscher))
+
 ## v0.18.1 (2026-07-10)
 
 #### :bug: Bug Fix
